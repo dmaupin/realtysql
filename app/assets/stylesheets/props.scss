@@ -560,7 +560,8 @@ input {
 .formcontainer {
 	@include outer-container();
 	@include span-columns(12);
-	margin-top: 60px;
+	background-color: $grey;
+	margin-top: 55px;
 	min-width: 100%;
 	padding-left: 2.5%;
 	padding-right: 2.5%;
@@ -570,9 +571,14 @@ input {
 	margin-top: 70px;
 	font-family: $fontsm;
 	min-width: 100%;
+	border-top: 1px white solid;
+	padding-top: 15px;
+	border-bottom: 1px white solid;
 
 	input {
 		margin-bottom: 30px;
+		border-radius: 0px;
+		height: 40px;
 	}
 
 	input[type=submit] {
@@ -581,7 +587,8 @@ input {
 		background-color: $yellow;
 		margin-top: 18px;
 		@include span-columns(3);
-		margin-right: 30px;
+		// margin-right: 30px;
+		cursor: pointer;
 	}
 
 	input[type=submit]:hover {
@@ -590,13 +597,28 @@ input {
 	}
 
 	button {
-		@include span-columns(3);
+		@include span-columns(1);
 		height: 40px;
 		background-color: #FF0000;
 		// float: right;
 		margin-top: 18px;
 		margin-left: 30px;
+		margin-right: 0px;
 	}
+
+	textarea {
+		appearance: none;
+		@include span-columns(12);
+		margin-bottom: 30px;
+    height: 75px;
+    border: none;
+    padding: 15px;
+	}
+
+	a {
+		color: white;
+	}
+
 }
 
 // bio
