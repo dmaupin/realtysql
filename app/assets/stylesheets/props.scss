@@ -1,0 +1,683 @@
+// Place all the styles related to the props controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the properties controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// fonts
+
+@font-face {
+	font-family: 'LubalinGraphStd-Demi';
+	src: url('2E86DE_0_0.eot');
+	src: url('2E86DE_0_0.eot?#iefix') format('embedded-opentype'),
+	url('2E86DE_0_0.woff2') format('woff2'),
+	url('2E86DE_0_0.woff') format('woff'),
+	url('2E86DE_0_0.ttf') format('truetype');
+}
+ 
+  
+@font-face {
+	font-family: 'LubalinGraphStd-Bold';
+	src: url('2E86DE_1_0.eot');
+	src: url('2E86DE_1_0.eot?#iefix') format('embedded-opentype'),
+	url('2E86DE_1_0.woff2') format('woff2'),url('2E86DE_1_0.woff') format('woff'),
+	url('2E86DE_1_0.ttf') format('truetype');
+}
+ 
+  
+@font-face {
+	font-family: 'LubalinGraphStd-Book';
+	src: url('2E86DE_2_0.eot');
+	src: url('2E86DE_2_0.eot?#iefix') format('embedded-opentype'),
+	url('2E86DE_2_0.woff2') format('woff2'),url('2E86DE_2_0.woff') format('woff'),
+	url('2E86DE_2_0.ttf') format('truetype');
+}
+
+// variables
+
+$yellow: #FDDE2C;
+$yellowtrans: rgba(253,222,44,0.9);
+$grey: #f2f2f2;
+$grey2: #D9D9D9;
+
+$mobile1: new-breakpoint(max-width 900px 6);
+$media1: new-breakpoint(max-width 922px 6);
+
+$fontmd: 'LubalinGraphStd-Book';
+$fontsm: 'LubalinGraphStd-Demi';
+$fontlrg: 'LubalinGraphStd-Bold';
+
+// base styles
+
+body {
+	font-family: $fontmd;
+	font-size: 100%;
+  margin: 0px;
+  background-color: $grey2;
+  font-family: sans-serif;
+  min-width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+	appearance: none;
+	text-decoration: none;
+	color: black;	
+}
+
+a:hover {
+	color: $grey;
+	transition: .5s;
+}
+
+a:active {
+	background-color: $yellow;
+}
+
+a:active {
+	background-color: $yellow;
+}
+
+ul {
+	appearance: none;
+	text-decoration: none;
+	color: white;
+}
+
+button {
+	appearance: none;
+	border: none;
+	background-color: $yellow;
+	border-radius: 3px;
+	font-family: $fontsm;
+	height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+}
+
+button:hover {
+	color: $grey2;
+	transition: .5s;
+}
+
+// TYPOGRAPHY
+
+// Index-House Address / Title
+
+h1 {
+	font-family: $fontmd;
+	font-size: 1.5rem;
+	text-align: left;
+	background-color:rgba(255, 255, 255, 0.9);
+	outline: solid 5px rgba(255, 255, 255, 0.9);
+	position: absolute;
+	line-height: 1;
+	padding: 5px 5px 0px 5px;
+}
+
+// Index-Property price
+
+h4 { 
+	font-family: $fontmd;
+	font-size: 1.25rem;
+	text-align: left;
+	background-color: $yellowtrans;
+	outline: solid 5px $yellowtrans;
+	position: absolute;
+	line-height: 1;
+	margin-top: 41px;
+	padding: 5px 5px 0px 5px;
+}
+
+// Show-Property Price + Sq. Ft
+
+h2 {
+	font-family: $fontmd;
+	font-size: 1.5rem;
+	text-align: left;
+	// margin-left: 2%;
+	// text-transform: uppercase;
+	// letter-spacing: -.1em;
+	color: black;
+}
+
+p {
+	font-family: $fontmd;
+	color: black;
+}
+
+.dropcap {
+	font-family: $fontsm;
+	font-size: 2.75em;
+	float: left;
+	line-height: 1.1;
+  margin-bottom: -8px;
+  padding-right: 1px;
+}
+
+.kernless {
+	letter-spacing: -2;
+}
+
+.kernmore {
+	letter-spacing: 2;
+}
+
+// SHow-Title / Address
+
+.b1 {
+	font-family: $fontlrg;
+	font-size: 2.75rem;
+	text-align: left;
+	// text-transform: uppercase;
+	line-height: 1;
+}
+
+.b2 {
+	font-family: $fontsm;
+	color: white;
+	font-size: 2.15rem;
+	text-align: left;
+	line-height: 1;
+	letter-spacing: -4;
+}
+
+.y1 {
+	font-family: $fontsm;
+	color: white;
+	font-size: 1.5em;
+	letter-spacing: -2;
+	border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+// nav
+
+.yellow {
+		// @include span-columns(5);
+		width: 515px;
+		height: 100%;
+		background-color: $yellow;
+		border-right: 1px solid $grey;
+		
+	}
+
+.navbar {
+	width: 100%;
+	max-width: 1280px;
+	height: 55px;
+	background-color: $grey;
+	position: fixed;
+	z-index: 100;
+	border-bottom: 1px solid $grey;
+
+	// a {
+	// 	border-right: 1px solid black;
+	// 	height: 100%;
+	// 	padding-right: 
+	// }
+
+	.links {
+		font-family: $fontmd;
+		font-size: .85em;
+		left: 1.35%;
+		top: 22px;
+		position:absolute;
+		cursor: pointer;
+	}
+
+	// .links:active {
+	// 	background-color: $yellow;
+	// } 
+
+	.bug {
+    right: 1.35%;
+    top: 15px;
+    position: fixed;
+    width: 385px;
+    position:absolute;
+	}
+
+	.bug2 {
+		display: none;
+  	right: 1.75%;
+		top: 15px;
+		position: fixed;
+		width: 82px;
+		position:absolute;
+	}
+
+}
+
+// hero
+
+.hero{
+	@include outer-container();
+	background-color: black;
+  background: url(sunset2.png) fixed;
+	background-position: center -200px;
+	background-repeat: no-repeat; 
+	min-width: 100%;
+	position: inherit;
+	// margin-bottom: 4em;
+	min-height: 525px;
+
+	// @include media($mobile1) {
+ //  	// padding: 20%;
+ //  	max-height: 280px;
+ // 	}	
+
+ .logo{
+		// margin: 0 auto;
+		width: 90%;
+		margin-left: 5%; 
+		margin-top: 13%;
+}
+
+.y1 {
+	font-family: $fontmd;
+	font-size: 8vw;
+	text-align: center;
+	letter-spacing: -0.01em;
+	margin: 0 auto;
+	line-height: 1;	
+	color: #ffffff;
+	margin-top: 10%;
+}
+
+  .mailformbox {
+	 	@include span-columns(4);
+	  height: 100%;
+	  border-top: white 1px solid;
+	  margin-top: 100px;
+
+	// @include media($mobile1) {
+ //  	@include span-columns(6);
+ //  	display: none;
+ // 	}	
+
+ }
+
+ #buttonbox{
+ 	padding-top: 5px;
+ 	padding-bottom: 5px;
+ 	border-top: solid white 1px;
+ 	border-bottom: solid white 1px;
+ }
+
+}
+
+// email list
+
+input {
+	width: 100%;
+  // height: 4em;
+  height: 6vh;
+  border-radius: 2.5px;
+  border: none;
+  margin-bottom: 2px;
+  padding-left: 1em;
+  font-family: $fontmd;
+}
+
+.subbtn {
+	background-color: $yellow;
+}
+
+.subbtn:hover {
+	transition: .2s;
+	background-color: #F0D02B;
+	cursor: pointer;
+}
+
+
+// sections
+
+.sectiontitle {
+	margin-right: 2em;
+	font-family: $fontsm;
+	// background-color: $yellow;
+}
+
+#flag {
+	background-color: $yellow;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: -4;
+  margin-top: -182px;
+  transform: rotate(45deg);
+  // float: inherit;
+  left: 1vw;
+}
+
+#flagtwo {
+	background-color: $grey2;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: -3;
+  margin-top: -182px;
+  transform: rotate(45deg);
+  // float: inherit;
+  left: -1vw;
+}
+
+#margin {
+	background-color: $grey2;
+	width: 7%;
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	left: 0;
+	margin-top: 100px;
+}
+
+.sectionlink {
+	@include span-columns(6);
+	@include omega();
+	background-color: $yellow;
+	border-right: $grey 1px solid;
+	border-top: $grey 1px solid;
+	min-height: 355px;
+	padding-top: 20px;
+	// max-height: 355px;
+
+	// @include media($mobile1) {
+ //  	@include span-columns(6);
+ //  	// min-height: 185px;
+
+ //  	// img {
+ // 		// 	height: 25%;
+ // 		// }
+ // }	
+
+}
+
+#buyers {
+	background-color: $grey;
+	color: $yellow;
+}
+
+#development {
+	background-color: white;
+	color: $yellow;
+
+	.b1 {
+	  font-size: 5vw;
+	  line-height: 45px;
+	  margin-bottom: -17px;
+	}
+
+	h5 {
+		color: black;
+	}
+}
+
+#about {
+	// background-color: $grey2;
+}
+
+// property
+
+.container {
+	@include outer-container();
+	min-width: 102.5%;
+	// margin-top: 4em;
+}
+
+.prop {
+	@include span-columns(6);
+	@include omega();
+	font-size: .75em;
+	background-color: $grey;
+	background-image: url(home2.png);
+	background-position: center;
+	background-size: cover;
+	border-right: $grey 1px solid;
+	border-top: $grey 1px solid;
+	padding-left: 2%;
+	padding-top: .75%;
+	min-height: 355px;
+
+	// @include media($mobile1) {
+ //  	@include span-columns(6);
+ //  	background-size: cover;
+ // }
+
+}
+
+.proplinks {
+	font-family: $fontsm;
+	font-size: 1em;
+	background-color: $yellowtrans;
+	outline: solid 5px $yellowtrans; 
+	position: absolute;
+	margin-top: 283px;
+	padding: 4px 4px 0px 4px;
+
+	h1:hover {
+		color: $yellow;
+	}
+}
+
+.arrow {
+  height: 2em;
+  position: absolute;
+  margin-top: 280.65px;
+  margin-left: 74px;
+}
+
+// footer
+
+.footer {
+	height: 200px;
+	background-color: black;
+	color: white;
+	font-family: $fontmd;
+	padding-top: 50px;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom: 50px;
+
+	a {
+		color: white;
+	}
+
+	a:hover {
+		color: $yellow;
+	}
+
+	i {
+		color: $yellow;
+	}
+}
+
+	#footlinks {
+		@include span-columns(4);
+		@include omega();
+
+		// @include media($mobile1) {
+	 //  	display: none;
+	 // }
+
+	}
+
+	#footinfo {
+		float: right;
+		text-align: right;
+		color: white;
+	}
+
+// show page
+
+.prophero{
+	@include outer-container();
+	@include span-columns(12);
+	min-width: 100%;
+	background-position: center;
+}
+
+.propinfo {
+	@include outer-container();
+	@include span-columns(12);
+	font-family: $fontsm;
+	min-width: 100%;
+	padding: 5%;
+	background-color: $grey2;
+
+	span {
+		color: white;
+	}
+
+	.propinfoleft {
+		@include outer-container();
+		@include span-columns(6);
+	}
+
+	.propinforight {
+		@include outer-container();
+		@include span-columns(6);
+		// margin-top: 2.75rem;
+	}
+
+	a:hover {
+		color: $grey;
+	}
+
+}
+
+// Forms
+
+// Edit Form
+
+.formcontainer {
+	@include outer-container();
+	@include span-columns(12);
+	margin-top: 60px;
+	min-width: 100%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+}
+
+.form {
+	margin-top: 70px;
+	font-family: $fontsm;
+	min-width: 100%;
+
+	input {
+		margin-bottom: 30px;
+	}
+
+	input[type=submit] {
+		font-family: $fontsm;
+		height: 40px;
+		background-color: $yellow;
+		margin-top: 18px;
+		@include span-columns(3);
+		margin-right: 30px;
+	}
+
+	input[type=submit]:hover {
+		color: $grey;
+		transition: .5s;
+	}
+
+	button {
+		@include span-columns(3);
+		height: 40px;
+		background-color: #FF0000;
+		// float: right;
+		margin-top: 18px;
+		margin-left: 30px;
+	}
+}
+
+// bio
+
+.bio {
+	@include outer-container();
+	@include span-columns(12);
+	background-color: $grey2;
+	min-width: 100%;
+	min-height: 25em;
+	padding: 5em;
+	border-bottom: $grey 1px solid;
+	border-top: $grey 1px solid;
+}
+
+.biohero {
+	@include outer-container();
+	@include span-columns(12);
+	min-width: 100%;
+	// min-height: 500px;
+	background-color: $yellow;
+}
+
+.biolft {
+	@include outer-container();
+	@include span-columns(5);
+
+	.portrait {
+		border-radius: 100%;
+		background-color: $yellow;
+		width: 350px;
+		height: 350px;
+		background-image: url(doug.png);
+		background-size: contain;
+	}
+}
+
+.biort{
+	@include outer-container();
+	@include span-columns(7);
+	float: right;
+}
+
+// development
+
+.dev {
+	@include outer-container();
+	@include span-columns(12);
+	min-width: 100%;
+	// min-height: 500px;
+	background-color: $grey;
+}
+
+.devhero {
+  background: url(plan.png) 9px 5px fixed;
+  background-repeat: none;
+  // min-height: 0px;
+}
+
+.devinfo {
+	background-color: $grey2;
+	min-height: 500px;
+	min-width: 100%;
+	@include outer-container();
+	@include span-columns(12);
+	padding: 90px;
+	padding-right: 45%;
+	border-bottom: $grey 1px solid;
+	border-top: $grey 1px solid;
+}
+
+.title {
+	width: 60%;
+	margin-left: 20%;
+}
+
+.list {
+	@include outer-container();
+	@include span-columns(12);
+	min-width: 100%;
+	// min-height: 500px;
+	background-color: $grey2;
+}
+

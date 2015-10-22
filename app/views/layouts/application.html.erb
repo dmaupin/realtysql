@@ -5,10 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="main">
+<!-- nav bar -->
+	<div class="navbar">
+		<div class="yellow"></div>
+		<div class="links"><%= link_to "Home", props_path %> | <a id="goingtoabout">About Us</a> | <a id="goingtolistings">Listings</a> | <a href="/">Buyers</a> | <a href="/">Sellers</a> | <a id="gotodev">Development</a> | <a href="/">Contact</a> </div>
+		<div class="bug"><img src="<%= asset_path('LogoBug_2a.svg') %>" alt="Maupin Realty"></div>
+		<div class="bug2"><img src="<%= asset_path('LogoBug.svg') %>" alt="Maupin Realty"></div>
+	</div>
+	<div id="margin"></div>
+	<%= yield %>
+	</div>
 </body>
 </html>

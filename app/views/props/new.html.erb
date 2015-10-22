@@ -1,0 +1,26 @@
+<div class="formcontainer">
+
+<h1>Add Property</h1>
+
+<div class="form">
+
+<%= form_for @prop do |p| %>
+	
+	Name: <%= p.text_field :title %>
+	Address <%= p.text_field :address %>
+	Price: <%= p.text_field :price %>
+	Square Footage: <%= p.number_field :sqft %>
+	Description: <%= p.text_field :description %>
+	MLS url: <%= p.text_field :mls  %>
+	Beds: <%= p.number_field :beds %>
+	Baths <%= p.number_field :baths %>
+
+	<%= p.submit "Update" %>
+
+	<% end %>
+
+<button><%= link_to "Cancel", props_path %></button>
+
+</div>
+
+</div>

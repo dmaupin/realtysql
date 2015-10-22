@@ -1,0 +1,23 @@
+<div class="formcontainer">
+
+<h1><%= @prop.title %></h1>
+
+<div class="form">
+
+<%= form_for @prop do |p| %>
+	
+	Name / Address: <%= p.text_field :title %>
+	Price: <%= p.text_field :price %>
+	Square Footage: <%= p.number_field :sqft %>
+	Description: <%= p.text_field :description %>
+	<%= p.submit "Update" %>
+
+	<% end %>
+
+<button><%= link_to "Delete", :prop, method: :delete, data: {confirm: "Are you sure? This action cannot be undone."} %></button>
+
+<button><%= link_to "Cancel", prop_path %></button>
+
+</div>
+
+</div>

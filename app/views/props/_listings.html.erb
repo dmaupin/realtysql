@@ -1,0 +1,17 @@
+<!-- Listings -->
+<div class="list">
+	<div class="devhero" data-speed="2" data-type="background">
+		<img src="<%= asset_path('listings.svg') %>" alt="Maupin Realty" class="title">
+	</div>
+</div>
+
+<div class="container" id="props">
+<% @props.each do |prop| %>
+		<div class="prop">
+			<h1><%= link_to prop.title, prop_path(prop)%></h1><br>
+			<h4><%= prop.price %></h4>
+			<div class="proplinks"><%= link_to "More Info", prop_path(prop)%></div>
+			<!-- <img src="<%= asset_path('arrow.svg') %>" class="arrow"> -->
+		</div>
+<% end %>
+</div>
