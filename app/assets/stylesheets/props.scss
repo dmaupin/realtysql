@@ -260,7 +260,7 @@ p {
 .hero{
 	@include outer-container();
 	background-color: black;
-  background: url(sunset2.png) fixed;
+ 	 background: image-url(sunset2.png) fixed;
 	background-position: center -200px;
 	background-repeat: no-repeat; 
 	min-width: 100%;
@@ -437,7 +437,7 @@ input {
 	@include omega();
 	font-size: .75em;
 	background-color: $grey;
-	background-image: url(home2.png);
+	background-image: image-url(home2.png);
 	background-position: center;
 	background-size: cover;
 	border-right: $grey 1px solid;
@@ -629,7 +629,7 @@ input {
 		background-color: $yellow;
 		width: 350px;
 		height: 350px;
-		background-image: url(doug.png);
+		background-image: image-url(doug.png);
 		background-size: contain;
 	}
 }
@@ -651,7 +651,7 @@ input {
 }
 
 .devhero {
-  background: url(plan.png) 9px 5px fixed;
+  background: image-url(plan.png) 9px 5px fixed;
   background-repeat: none;
   // min-height: 0px;
 }
