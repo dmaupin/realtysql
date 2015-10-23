@@ -4,18 +4,20 @@
 
 <div class="form">
 
+	<!-- flash msg goeas here -->
+
 <%= form_for @prop do |p| %>
 	
 	Name: <%= p.text_field :title %>
 	Address <%= p.text_field :address %>
 	Price: <%= p.text_field :price %>
 	Square Footage: <%= p.number_field :sqft %>
-	Description: <%= p.text_field :description %>
+	Description: <%= p.text_area :description %><br>
 	MLS url: <%= p.text_field :mls  %>
 	Beds: <%= p.number_field :beds %>
 	Baths <%= p.number_field :baths %>
 
-	<%= p.submit "Update" %>
+	<%= p.submit "Add Property" %>
 
 	<% end %>
 

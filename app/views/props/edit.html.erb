@@ -1,15 +1,21 @@
 <div class="formcontainer">
 
-<h1><%= @prop.title %></h1>
+<h1>Editing: <%= @prop.title %></h1>
 
 <div class="form">
 
+<!-- flash msg goes here -->
+
 <%= form_for @prop do |p| %>
 	
-	Name / Address: <%= p.text_field :title %>
+	Name: <%= p.text_field :title %>
+	Address <%= p.text_field :address %>
 	Price: <%= p.text_field :price %>
 	Square Footage: <%= p.number_field :sqft %>
-	Description: <%= p.text_field :description %>
+	Description: <%= p.text_area :description %><br>
+	MLS url: <%= p.text_field :mls  %>
+	Beds: <%= p.number_field :beds %>
+	Baths <%= p.number_field :baths %>
 	<%= p.submit "Update" %>
 
 	<% end %>
