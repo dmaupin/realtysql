@@ -436,7 +436,7 @@ input {
 	@include span-columns(6);
 	@include omega();
 	font-size: .75em;
-	background-color: $grey;
+	// background-color: $grey;
 	// background-image: url(home2.png);
 	background-position: center;
 	background-size: cover;
@@ -522,6 +522,10 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	background-position: center;
+
+	img {
+		max-width: 1280px;
+	}
 }
 
 .propinfo {
