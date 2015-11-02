@@ -16,6 +16,7 @@
 	MLS url: <%= p.text_field :mls  %>
 	Beds: <%= p.number_field :beds %>
 	Baths <%= p.number_field :baths %>
+	Photo : <%= p.file_field :image %>
 	<%= p.submit "Update" %>
 
 	<% end %>
