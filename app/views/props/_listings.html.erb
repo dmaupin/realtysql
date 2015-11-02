@@ -7,11 +7,12 @@
 
 <div class="container" id="props">
 <% @props.each do |prop| %>
-		<div class="prop">
+		<div class="prop" style="background-image: url(<%= prop.image.url %>);" >
+			<!-- <div class="propback"><%= image_tag prop.image.url %></div> -->
 			<h1><%= link_to prop.title, prop_path(prop)%></h1><br>
 			<h4><%= prop.price %></h4>
 			<div class="proplinks"><%= link_to "More Info", prop_path(prop)%></div>
-			<!-- <img src="<%= asset_path('arrow.svg') %>" class="arrow"> -->
+			
 		</div>
 <% end %>
 </div>
