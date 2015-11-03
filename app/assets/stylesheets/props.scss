@@ -41,6 +41,7 @@ $yellow: #FDDE2C;
 $yellowtrans: rgba(253,222,44,0.9);
 $grey: #f2f2f2;
 $grey2: #D9D9D9;
+$grey3: #888888;
 $red: #FF000D;
 
 $mobile1: new-breakpoint(max-width 900px 6);
@@ -461,8 +462,8 @@ input {
 
 .footer {
 	height: 200px;
-	background-color: $grey2;
-	color: black;
+	background-color: black;
+	color: white;
 	font-family: $fontmd;
 	padding-top: 50px;
 	padding-left: 2%;
@@ -470,7 +471,7 @@ input {
 	padding-bottom: 50px;
 
 	a {
-		color: black;
+		color: white;
 	}
 
 	a:hover {
@@ -478,7 +479,7 @@ input {
 	}
 
 	i {
-		color: white;
+		color: $grey3;
 	}
 }
 
@@ -495,7 +496,7 @@ input {
 	#footinfo {
 		float: right;
 		text-align: right;
-		color: black;
+		color: white;
 	}
 
 // show page
@@ -521,6 +522,7 @@ input {
 	margin-top: -5px;
 
 	span {
+		font-family: $fontmd;
 		color: white;
 	}
 
@@ -615,6 +617,7 @@ input {
 }
 
 .warning {
+	color: white;
 	background-color: $red;
 }
 
@@ -623,7 +626,7 @@ input {
 .bio {
 	@include outer-container();
 	@include span-columns(12);
-	background-color: $yellow;
+	background-color: $grey2;
 	min-width: 100%;
 	min-height: 25em;
 	padding: 5em;
@@ -678,7 +681,7 @@ input {
 }
 
 .devinfo {
-	background-color: black;
+	background-color: $grey3;
 	min-height: 500px;
 	min-width: 100%;
 	@include outer-container();
@@ -689,11 +692,11 @@ input {
   // padding: 5em;
   padding-top: 9em;
 	.b1 {
-		color: white;
+		color: $yellow;
 	}
 
 	.y1 {
-		color: $yellow;
+		color: white;
 		border-color: white;
 	}
 
