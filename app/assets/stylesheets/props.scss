@@ -518,9 +518,15 @@ input {
 	min-width: 100%;
 	padding: 5%;
 	background-color: $grey2;
+	margin-top: -5px;
 
 	span {
 		color: white;
+	}
+
+	.b1 {
+		border-bottom: 1px solid black;
+		padding-bottom: 40px;
 	}
 
 	.propinfoleft {
@@ -531,7 +537,7 @@ input {
 	.propinforight {
 		@include outer-container();
 		@include span-columns(6);
-		// margin-top: 2.75rem;
+		margin-top: 65px;
 	}
 
 	a:hover {
