@@ -41,6 +41,7 @@ $yellow: #FDDE2C;
 $yellowtrans: rgba(253,222,44,0.9);
 $grey: #f2f2f2;
 $grey2: #D9D9D9;
+$red: #FF000D;
 
 $mobile1: new-breakpoint(max-width 900px 6);
 $media1: new-breakpoint(max-width 922px 6);
@@ -55,7 +56,7 @@ body {
 	font-family: $fontmd;
 	font-size: 100%;
   margin: 0px;
-  background-color: $grey2;
+  background-color: $grey;
   font-family: sans-serif;
   min-width: 1280px;
   max-width: 1280px;
@@ -171,7 +172,7 @@ p {
 // SHow-Title / Address
 
 .b1 {
-	font-family: $fontlrg;
+	font-family: $fontsm;
 	font-size: 2.75rem;
 	text-align: left;
 	// text-transform: uppercase;
@@ -212,10 +213,10 @@ p {
 	width: 100%;
 	max-width: 1280px;
 	height: 55px;
-	background-color: $grey;
+	background-color: white;
 	position: fixed;
 	z-index: 100;
-	border-bottom: 1px solid $grey;
+	// border-bottom: 1px solid $grey;
 
 	// a {
 	// 	border-right: 1px solid black;
@@ -259,14 +260,15 @@ p {
 
 .hero{
 	@include outer-container();
-	background-color: black;
-  background: url(sunset2.png) fixed;
-	background-position: center -200px;
+	background-color: $yellow;
+  background: url(sunset2a.png) fixed;
+	background-position: center -150px;
+	background-size: 1280px;
 	background-repeat: no-repeat; 
 	min-width: 100%;
 	position: inherit;
 	// margin-bottom: 4em;
-	min-height: 525px;
+	min-height: 40em;
 
 	// @include media($mobile1) {
  //  	// padding: 20%;
@@ -277,7 +279,7 @@ p {
 		// margin: 0 auto;
 		width: 90%;
 		margin-left: 5%; 
-		margin-top: 13%;
+		margin-top: 17%;
 }
 
 .y1 {
@@ -370,7 +372,7 @@ input {
 }
 
 #margin {
-	background-color: $grey2;
+	background-color: $grey;
 	width: 7%;
 	position: absolute;
 	z-index: -1;
@@ -383,25 +385,12 @@ input {
 	@include span-columns(6);
 	@include omega();
 	background-color: $yellow;
-	border-right: $grey 1px solid;
-	border-top: $grey 1px solid;
 	min-height: 355px;
 	padding-top: 20px;
-	// max-height: 355px;
-
-	// @include media($mobile1) {
- //  	@include span-columns(6);
- //  	// min-height: 185px;
-
- //  	// img {
- // 		// 	height: 25%;
- // 		// }
- // }	
-
 }
 
 #buyers {
-	background-color: $grey;
+	background-color: white;
 	color: $yellow;
 }
 
@@ -433,24 +422,18 @@ input {
 }
 
 .prop {
+	// Background image is queryed from corresponding object
 	@include span-columns(6);
 	@include omega();
 	font-size: .75em;
-	// background-color: $grey;
-	// background-image: url(home2.png);
+	background-color: $grey;
 	background-position: center;
 	background-size: cover;
-	border-right: $grey 1px solid;
-	border-top: $grey 1px solid;
+	// border-right: $grey 1px solid;
+	// border-top: $grey 1px solid;
 	padding-left: 2%;
 	padding-top: .75%;
 	min-height: 355px;
-
-	// @include media($mobile1) {
- //  	@include span-columns(6);
- //  	background-size: cover;
- // }
-
 }
 
 .proplinks {
@@ -478,8 +461,8 @@ input {
 
 .footer {
 	height: 200px;
-	background-color: black;
-	color: white;
+	background-color: $grey2;
+	color: black;
 	font-family: $fontmd;
 	padding-top: 50px;
 	padding-left: 2%;
@@ -487,7 +470,7 @@ input {
 	padding-bottom: 50px;
 
 	a {
-		color: white;
+		color: black;
 	}
 
 	a:hover {
@@ -495,7 +478,7 @@ input {
 	}
 
 	i {
-		color: $yellow;
+		color: white;
 	}
 }
 
@@ -512,7 +495,7 @@ input {
 	#footinfo {
 		float: right;
 		text-align: right;
-		color: white;
+		color: black;
 	}
 
 // show page
@@ -603,7 +586,7 @@ input {
 	button {
 		@include span-columns(1);
 		height: 40px;
-		background-color: #FF0000;
+		background-color: $red;
 		// float: right;
 		margin-top: 18px;
 		margin-left: 30px;
@@ -625,17 +608,23 @@ input {
 
 }
 
+.warning {
+	background-color: $red;
+}
+
 // bio
 
 .bio {
 	@include outer-container();
 	@include span-columns(12);
-	background-color: $grey2;
+	background-color: $yellow;
 	min-width: 100%;
 	min-height: 25em;
 	padding: 5em;
-	border-bottom: $grey 1px solid;
-	border-top: $grey 1px solid;
+	min-height: 40em;
+  padding: 5em;
+  padding-top: 9em;
+
 }
 
 .biohero {
@@ -673,25 +662,38 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	// min-height: 500px;
-	background-color: $grey;
+	background-color: $grey2;
 }
 
 .devhero {
-  background: url(plan.png) 9px 5px fixed;
-  background-repeat: none;
+  // background: url(plan.png) fixed;
+  // background-repeat: none;
   // min-height: 0px;
 }
 
 .devinfo {
-	background-color: $grey2;
+	background-color: black;
 	min-height: 500px;
 	min-width: 100%;
 	@include outer-container();
 	@include span-columns(12);
 	padding: 90px;
 	padding-right: 45%;
-	border-bottom: $grey 1px solid;
-	border-top: $grey 1px solid;
+	min-height: 40em;
+  // padding: 5em;
+  padding-top: 9em;
+	.b1 {
+		color: white;
+	}
+
+	.y1 {
+		color: $yellow;
+		border-color: white;
+	}
+
+	p {
+		color: white;
+	}
 }
 
 .title {
