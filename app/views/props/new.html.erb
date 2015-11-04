@@ -9,7 +9,8 @@
 <%= form_for @prop do |p| %>
 	
 	Name: <%= p.text_field :title %>
-	Address <%= p.text_field :address %>
+	Address <%= p.text_field :street %>
+	City, State, Zip <%= p.text_field :city %>
 	Price: <%= p.text_field :price %>
 	Square Footage: <%= p.number_field :sqft %>
 	Description: <%= p.text_area :description %><br>

@@ -15,7 +15,7 @@ class PropsController < ApplicationController
 	def update
 		@prop = Prop.find(params[:id])
 
-		if @prop.update_attributes(params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :address, :beds, :baths, :image))
+		if @prop.update_attributes(params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :street, :city, :beds, :baths, :image))
 			redirect_to prop_path
 		else
 			render "edit"
@@ -27,7 +27,7 @@ class PropsController < ApplicationController
 	end
 
 	def create
-		@prop = Prop.new(params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :address, :beds, :baths, :image))
+		@prop = Prop.new(params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :street, :city, :beds, :baths, :image))
 
 		if @prop.save
 			redirect_to props_path
