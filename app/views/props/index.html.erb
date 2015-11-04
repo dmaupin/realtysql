@@ -1,10 +1,19 @@
+<!-- Nav -->
+
+<div class="navbar">
+	<!-- <div class="yellow"></div> -->
+	<div class="links"><%= link_to "Home", props_path %> | <a id="goingtoabout">About Us</a> | <a id="goingtolistings">Listings</a> | <a href="/">Buyers</a> | <a href="/">Sellers</a> | <a id="gotodev">Development</a> | <a href="/">Contact</a> </div>
+	<div class="bug"><img src="<%= asset_path('LogoBug_2a.svg') %>" alt="Maupin Realty"></div>
+	<div class="bug2"><img src="<%= asset_path('LogoBug.svg') %>" alt="Maupin Realty"></div>
+</div>
+
 <!-- Hero -->
 
 <div id="hero"><%= render partial: 'layouts/hero' %></div>
 
-	<!-- Listings -->
+<!-- Listings -->
 
-	<div id="listings"><%= render partial: 'props/listings' %></div>
+<div id="listings"><%= render partial: 'props/listings' %></div>
 
 <!-- about -->
 
