@@ -226,7 +226,7 @@ p {
 	// }
 
 	.links {
-		font-family: $fontmd;
+		font-family: $fontsm;
 		font-size: .85em;
 		left: 1.35%;
 		top: 22px;
@@ -234,7 +234,7 @@ p {
 		cursor: pointer;
 
 		a {
-			margin-right: 35px;
+			margin-right: 25px;
 		}
 
 		a:hover {
@@ -248,10 +248,10 @@ p {
 	// } 
 
 	.bug {
-    right: 8px;
-    top: 8px;
+    right: 10px;
+    top: 10px;
     position: fixed;
-    width: 285px;
+    width: 201px;
     position: absolute;
 	}
 
