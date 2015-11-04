@@ -43,7 +43,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $("#gotodev").click(function() {
     $('html, body').animate({
-        scrollTop: $("#dev").offset().top+850
+        scrollTop: $("#dev").offset().top+655
     }, 1000);
   });
 });

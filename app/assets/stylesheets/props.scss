@@ -232,6 +232,15 @@ p {
 		top: 22px;
 		position:absolute;
 		cursor: pointer;
+
+		a {
+			margin-right: 35px;
+		}
+
+		a:hover {
+			color: $grey3;
+			background-color: $yellow;
+		}
 	}
 
 	// .links:active {
@@ -239,11 +248,11 @@ p {
 	// } 
 
 	.bug {
-    right: 1.35%;
-    top: 15px;
+    right: 8px;
+    top: 8px;
     position: fixed;
-    width: 385px;
-    position:absolute;
+    width: 285px;
+    position: absolute;
 	}
 
 	.bug2 {
@@ -263,13 +272,13 @@ p {
 	@include outer-container();
 	background-color: $yellow;
   background: url(sunset2a.png) fixed;
-	background-position: center -150px;
+	background-position: center -250px;
 	background-size: 1280px;
 	background-repeat: no-repeat; 
 	min-width: 100%;
 	position: inherit;
 	// margin-bottom: 4em;
-	min-height: 40em;
+	min-height: 36.25em;
 
 	// @include media($mobile1) {
  //  	// padding: 20%;
@@ -280,7 +289,7 @@ p {
 		// margin: 0 auto;
 		width: 90%;
 		margin-left: 5%; 
-		margin-top: 17%;
+		margin-top: 15%;
 }
 
 .y1 {
@@ -346,30 +355,6 @@ input {
 	margin-right: 2em;
 	font-family: $fontsm;
 	// background-color: $yellow;
-}
-
-#flag {
-	background-color: $yellow;
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  z-index: -4;
-  margin-top: -182px;
-  transform: rotate(45deg);
-  // float: inherit;
-  left: 1vw;
-}
-
-#flagtwo {
-	background-color: $grey2;
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  z-index: -3;
-  margin-top: -182px;
-  transform: rotate(45deg);
-  // float: inherit;
-  left: -1vw;
 }
 
 #margin {
@@ -630,7 +615,7 @@ input {
 	min-width: 100%;
 	min-height: 25em;
 	padding: 5em;
-	min-height: 40em;
+	min-height: 710px;
   padding: 5em;
   padding-top: 9em;
 
@@ -688,7 +673,7 @@ input {
 	@include span-columns(12);
 	padding: 90px;
 	padding-right: 45%;
-	min-height: 40em;
+	min-height: 710px;
   // padding: 5em;
   padding-top: 9em;
 	.b1 {
