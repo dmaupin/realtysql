@@ -498,7 +498,7 @@ input {
 	min-width: 100%;
 	padding: 5%;
 	background-color: $grey2;
-	margin-top: -5px;
+	margin-top: -60px;
 
 	span {
 		font-family: $fontmd;
@@ -697,3 +697,18 @@ input {
 	background-color: $grey2;
 }
 
+// bxslide styles
+
+.bx-wrapper {
+	box-shadow: none;
+  border: none;
+  background: none;
+}
+
+.bxslider {
+	margin-top: 55px;
+}
+
+.bx-pager-link:active {
+	color: $yellow;
+}
