@@ -47,3 +47,9 @@ $(document).ready(function() {
     }, 1000);
   });
 });
+
+// initialize bxslider
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});

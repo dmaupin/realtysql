@@ -15,11 +15,13 @@
 <!-- property-show -->
 
 <!-- images -->
-<div class="prophero">
-		<% @prop.pics.each do |p| %>
-		<%= image_tag p.item_url %>
+<!-- <div class="prophero"> -->
+<ul class="bxslider">
+<% @prop.pics.each do |p| %>
+	<li><%= image_tag p.item_url %></li>
 	<% end %>
-</div>
+</ul>
+<!-- </div> -->
 <!-- info -->
 <div class="propinfo">
 	<div class="propinfoleft">
