@@ -217,13 +217,6 @@ p {
 	background-color: white;
 	position: fixed;
 	z-index: 100;
-	// border-bottom: 1px solid $grey;
-
-	// a {
-	// 	border-right: 1px solid black;
-	// 	height: 100%;
-	// 	padding-right: 
-	// }
 
 	.links {
 		font-family: $fontsm;
@@ -491,6 +484,7 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	background-position: center;
+	margin-top: 56px;
 
 	img {
 		max-width: 1280px;
