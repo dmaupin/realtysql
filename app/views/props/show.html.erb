@@ -16,7 +16,9 @@
 
 <!-- images -->
 <div class="prophero">
-	<%= image_tag @prop.image.url %>
+		<% @prop.pics.each do |p| %>
+		<%= image_tag p.item_url %>
+	<% end %>
 </div>
 <!-- info -->
 <div class="propinfo">

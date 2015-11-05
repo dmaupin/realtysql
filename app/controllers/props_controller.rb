@@ -14,25 +14,36 @@ class PropsController < ApplicationController
 
 	def update
 		@prop = Prop.find(params[:id])
-
-		if @prop.update_attributes(params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :street, :city, :beds, :baths, :image))
-			redirect_to prop_path
-		else
-			render "edit"
-		end		
+		
+		respond_to do |format|
+			if @prop.save
+				params[:pics]['item'].each do |a|
+					@pics = @prop.pics.create!(:item => a, :prop_id => @prop.id)
+				end
+				redirect_to prop_path
+			else
+				render "edit"
+			end
+		end
 	end
 
 	def new
 		@prop = Prop.new
+		@pic = @prop.pics.build
 	end
 
 	def create
-		@prop = Prop.new(params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :street, :city, :beds, :baths, :image))
+		@prop = Prop.new(prop_params)
 
-		if @prop.save
-			redirect_to props_path
-		else
-			render "new"
+		respond_to do |format|
+			if @prop.save
+				params[:pics]['item'].each do |a|
+					@pics = @prop.pics.create!(:item => a, :prop_id => @prop.id)
+				end
+				redirect_to props_path
+			else
+				render "new"
+			end
 		end
 	end
 
@@ -40,6 +51,12 @@ class PropsController < ApplicationController
 		@prop = Prop.find(params[:id])
 		@prop.destroy
 		redirect_to props_path
+	end
+
+	private
+
+	def prop_params
+		params.require(:prop).permit(:title, :price, :sqft, :description, :mls, :street, :city, :beds, :baths, :image, pics_attributes: [:id, :_destroy, :item])
 	end
 
 end
