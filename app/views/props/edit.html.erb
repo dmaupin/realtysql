@@ -19,7 +19,8 @@
 	Baths <%= p.number_field :baths %>
 		<%= p.fields_for :pics do |i| %>
 			<%= i.label :item, "Photos" %><br/>
-			<%= i.file_field :item, :multiple => true, name: "pics[item][]" %><br/>
+			<%= i.file_field :item, name: "pics[item][]" %><br/>
+			<label>Delete Photo<%= i.check_box :remove_item %></label>
 		<%	 end %>
 	<%= p.submit "Update" %>
 

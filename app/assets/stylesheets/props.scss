@@ -231,7 +231,7 @@ p {
 		}
 
 		a:hover {
-			color: $grey3;
+			color: black;
 			background-color: $yellow;
 		}
 	}
@@ -650,7 +650,12 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	// min-height: 500px;
-	background-color: $grey2;
+	background-color: $grey3;
+	padding: 90px;
+
+	.bx-wrapper .bx-controls-direction a {
+		margin-top: 165px;
+	}
 }
 
 .devhero {
@@ -661,15 +666,13 @@ input {
 
 .devinfo {
 	background-color: $grey3;
-	min-height: 500px;
+	// min-height: 500px;
 	min-width: 100%;
 	@include outer-container();
 	@include span-columns(12);
-	padding: 90px;
-	padding-right: 45%;
-	min-height: 710px;
-  // padding: 5em;
-  padding-top: 9em;
+	// padding-right: 45%;
+  padding-top: 2.5em;
+
 	.b1 {
 		color: $yellow;
 	}
@@ -681,6 +684,11 @@ input {
 
 	p {
 		color: white;
+	}
+
+	.bug {
+		float: right;
+    width: 15em;
 	}
 }
 
