@@ -26,16 +26,16 @@
 <div class="propinfo">
 	<div class="propinfoleft">
 		<div class="b1"><%= @prop.title %></div>
+		<p><%= @prop.description %></p>
+		<button><div class="propinfolink"><a href="blank">View on MLS</a></div></button>  <button type=""> <%= link_to "Home", props_path %></button>
+		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path %></button>
+	</div>
+	<div class="propinforight">
 		<h2><%= @prop.street %> </h2>
 		<h2><%= @prop.city %> </h2>
 		<h2><span>Price: </span> $ <%= @prop.price %></h2>
 		<h2><span>Square Feet: </span><%= @prop.sqft %> sq. ft.</h2>
-		<div><h2><span>Beds: </span><%= @prop.beds %></h2> <h2><span>Baths: </span><%= @prop.baths %></h2></div>
-	</div>
-	<div class="propinforight">
-		<p><%= @prop.description %></p>
-		<button><div class="propinfolink"><a href="blank">View on MLS</a></div></button>  <button type=""> <%= link_to "Home", props_path %></button>
-		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path %></button>
+		<div><h2><span>Beds: </span><%= @prop.beds %> <span>Baths: </span><%= @prop.baths %></h2></div>
 	</div>
 </div>
 
