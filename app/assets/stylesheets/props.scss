@@ -63,9 +63,11 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   overflow-x: hidden;
+  transition: max-width 0.25s ease-out;
 
   @include media($break1) {
   	max-width: 900px;
+  	transition: max-width 0.25s ease-out;
   }
 }
 
@@ -227,9 +229,11 @@ p {
 	background-color: white;
 	position: fixed;
 	z-index: 100;
+	transition: max-width 0.25s ease-out;
 
 	@include media($break1){
 		max-width: 900px;
+		transition: max-width 0.25s ease-out;
 	}
 
 	.links {
@@ -289,6 +293,7 @@ p {
 
 	@include media($break1) {
   	min-height: 26.25em;
+  	transition: min-height 0.25s ease-out;
  	}	
 
  .logo{
@@ -382,6 +387,7 @@ input {
 
 	@include media($break1) {
 		min-height: 275px;
+		transition: min-height 0.25s ease-out;
 	}
 }
 
@@ -429,11 +435,13 @@ input {
 	padding-top: .75%;
 	min-height: 355px;
 
-	@include media($break1){
+	@include media($break1) {
 		@include span-columns(6);
 		width: 97.65%;
     min-height: 34.25em;
     padding-top: .4%;
+    transition: min-height 0.25s ease-out;
+    background-position: inherit;
 
 	}
 }
@@ -444,7 +452,7 @@ input {
 	background-color: $yellowtrans;
 	outline: solid 5px $yellowtrans; 
 	position: absolute;
-	margin-top: 353px;
+	margin-top: 284px;
 	padding: 4px 4px 0px 4px;
 
 	h1:hover {
@@ -453,6 +461,7 @@ input {
 
 	@include media($break1) {
 		margin-top: 355px;
+		// transition: margin-top 0.25s ease-out;
 	}
 }
 
