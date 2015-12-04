@@ -35,6 +35,19 @@
 	url('2E86DE_2_0.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'maupinicon';
+    src: url('maupin-icon-webfont.eot');
+    src: url('maupin-icon-webfont.eot?#iefix') format('embedded-opentype'),
+         url('maupin-icon-webfont.woff2') format('woff2'),
+         url('maupin-icon-webfont.woff') format('woff'),
+         url('maupin-icon-webfont.ttf') format('truetype'),
+         url('maupin-icon-webfont.svg#maupinicon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 // variables
 
 $yellow: #FDDE2C;
@@ -46,11 +59,12 @@ $red: #FF000D;
 
 
 $break1: new-breakpoint(max-width 1279px 6);
-$media1: new-breakpoint(max-width 922px 6);
+$break2: new-breakpoint(max-width 899px 6);
 
 $fontmd: 'LubalinGraphStd-Book';
 $fontsm: 'LubalinGraphStd-Demi';
 $fontlrg: 'LubalinGraphStd-Bold';
+$icon: 'maupinicon';
 
 // base styles
 
@@ -67,6 +81,11 @@ body {
 
   @include media($break1) {
   	max-width: 900px;
+  	transition: max-width 0.25s ease-out;
+  }
+
+   @include media($break2) {
+  	max-width: 375px;
   	transition: max-width 0.25s ease-out;
   }
 }
@@ -231,32 +250,43 @@ p {
 	z-index: 100;
 	transition: max-width 0.25s ease-out;
 
-	@include media($break1){
+	@include media($break1) {
 		max-width: 900px;
 		transition: max-width 0.25s ease-out;
 	}
 
-	.links {
+	@include media($break2) {
+		max-width: 375px;
+		transition: max-width 0.25s ease-out;
+	}
+
+	ul {
 		font-family: $fontsm;
 		font-size: .85em;
-		left: 1.35%;
-		top: 22px;
+		left: -30px;
+		top: 8px;
 		position:absolute;
 		cursor: pointer;
+		list-style-type: none;
 
-		a {
+		// ul {
+		// 	list-style-type: none;
+		// }
+
+		li {
+			display: inline;
+			color: black;
+			padding: 2px;
 			margin-right: 25px;
 		}
 
-		a:hover {
+		li:hover {
 			color: black;
 			background-color: $yellow;
+			transition: background-color 0.25s;
 		}
-	}
 
-	// .links:active {
-	// 	background-color: $yellow;
-	// } 
+	}
 
 	.bug {
     right: 10px;
@@ -264,6 +294,10 @@ p {
     position: fixed;
     width: 201px;
     position: absolute;
+
+    @include media($break2) {
+    	display: none;
+    }
 	}
 
 	.bug2 {
@@ -273,6 +307,10 @@ p {
 		position: fixed;
 		width: 82px;
 		position:absolute;
+
+		@include media($break2) {
+			display: fixed;
+		}
 	}
 
 }
@@ -288,11 +326,18 @@ p {
 	background-repeat: no-repeat; 
 	min-width: 100%;
 	position: inherit;
-	// margin-bottom: 4em;
 	min-height: 36.25em;
 
 	@include media($break1) {
   	min-height: 26.25em;
+  	transition: min-height 0.25s ease-out;
+ 	}	
+
+ 	@include media($break2) {
+  	min-height: 20em;
+  	padding-top: 7.75em;
+  	background: none;
+  	background-color: $yellow;
   	transition: min-height 0.25s ease-out;
  	}	
 
@@ -301,39 +346,38 @@ p {
 		width: 90%;
 		margin-left: 5%; 
 		margin-top: 15%;
+
+		@include media($break2) {
+			display: none;
+		}
+	}
+
+	.bug {
+		width: 90%;
+		margin-left: 5%;
+	}
+
+	.y1 {
+		font-family: $icon;
+		font-size: 39em;
+		text-align: center;
+		color: $yellow;
+		// margin-top: 10%;
+	}
+
 }
 
-.y1 {
-	font-family: $fontmd;
-	font-size: 8vw;
-	text-align: center;
-	letter-spacing: -0.01em;
-	margin: 0 auto;
-	line-height: 1;	
-	color: #ffffff;
-	margin-top: 10%;
+#hero2 {
+	display: none;
+	@include media($break2) {
+		display: inherit;
+	}
 }
 
-  .mailformbox {
-	 	@include span-columns(4);
-	  height: 100%;
-	  border-top: white 1px solid;
-	  margin-top: 100px;
-
-	// @include media($mobile1) {
- //  	@include span-columns(6);
- //  	display: none;
- // 	}	
-
- }
-
- #buttonbox{
- 	padding-top: 5px;
- 	padding-bottom: 5px;
- 	border-top: solid white 1px;
- 	border-bottom: solid white 1px;
- }
-
+#hero1 {
+	@include media($break2) {
+		display: none;
+	}
 }
 
 // email list
@@ -389,6 +433,11 @@ input {
 		min-height: 275px;
 		transition: min-height 0.25s ease-out;
 	}
+
+	@include media($break2) {
+		min-height: 135px;
+		transition: min-height 0.25s ease-out;
+	}
 }
 
 #buyers {
@@ -442,7 +491,15 @@ input {
     padding-top: .4%;
     transition: min-height 0.25s ease-out;
     background-position: inherit;
+	}
 
+	@include media($break2) {
+		min-height: 20em;
+		padding-left: 1.4em;
+
+		h1 {
+
+		}
 	}
 }
 
@@ -462,6 +519,10 @@ input {
 	@include media($break1) {
 		margin-top: 355px;
 		// transition: margin-top 0.25s ease-out;
+	}
+
+	@include media($break2) {
+		margin-top: 190px;
 	}
 }
 
@@ -501,9 +562,9 @@ input {
 		@include span-columns(4);
 		@include omega();
 
-		// @include media($mobile1) {
-	 //  	display: none;
-	 // }
+		@include media($break2) {
+	  	display: none;
+	 }
 
 	}
 
@@ -511,20 +572,28 @@ input {
 		float: right;
 		text-align: right;
 		color: white;
+
+		@include media($break2) {
+			text-align: center;
+			float: none;
+		}
 	}
 
 // show page
 
 .prophero{
-	@include outer-container();
-	@include span-columns(12);
-	min-width: 100%;
-	background-position: center;
-	margin-top: 56px;
 
-	img {
-		max-width: 1280px;
+	.icon {
+		font-family: $icon;
+		color: $yellow;
+		position: relative;
+    margin-bottom: -58px;
+    z-index: 100;
+    font-size: 80px;
+    right: -1222px;
+    top: 60px;
 	}
+
 }
 
 .propinfo {
@@ -653,6 +722,15 @@ input {
   	padding-top: 5em;
   }
 
+  @include media($break2) {
+  	@include span-columns(6);
+  	padding: 2.5em;
+
+  	p {
+  		font-size: 12px;
+  	}
+  }
+
 }
 
 .biohero {
@@ -678,6 +756,9 @@ input {
     margin-left: 193px;
 	}
 
+	@include media($break2) {
+		margin-left: 44px;
+	}
 
 	.portrait {
 		border-radius: 100%;
@@ -686,6 +767,11 @@ input {
 		height: 350px;
 		background-image: url(doug.png);
 		background-size: contain;
+
+		@include media($break2) {
+			width: 200px;
+			height: 200px;
+		}
 	}
 }
 
@@ -699,6 +785,14 @@ input {
 		float: none;
 		margin-top: 75px;
 	}
+
+	@include media($break2) {
+		margin-top: 32px;
+
+		.b1 {
+			font-size: 2 em;
+		}
+	}
 }
 
 // development
@@ -709,31 +803,33 @@ input {
 	min-width: 100%;
 	// min-height: 500px;
 	background-color: $grey3;
-	padding: 90px;
-
-	.bx-wrapper .bx-controls-direction a {
-		margin-top: 165px;
-	}
-}
-
-.devhero {
-  // background: url(plan.png) fixed;
-  // background-repeat: none;
-  // min-height: 0px;
 }
 
 .devinfo {
 	background-color: $grey3;
-	// min-height: 500px;
 	min-width: 100%;
 	@include outer-container();
 	@include span-columns(12);
-	// padding-right: 45%;
+	padding: 5em;
   padding-top: 2.5em;
+
+  @include media($break2) {
+  	padding: 2.5em;
+
+  	p {
+  		font-size: 12px;
+  	}
+  }
 
 	.b1 {
 		color: $yellow;
+
+	@include media($break2) {
+			font-size: 2.5em;
+			padding-top: 0em;
 	}
+
+}
 
 	.y1 {
 		color: white;
@@ -772,7 +868,7 @@ input {
 }
 
 .bxslider {
-	margin-top: 55px;
+	background-color: $grey3;
 }
 
 .bx-pager-link:active {
