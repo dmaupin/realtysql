@@ -22,10 +22,18 @@ $(document).ready(function(){
    });  // end section function
 }); // close out script
 
-// Scroll-to
+// Scroll-tos
 
 $(document).ready(function() {
   $("#goingtolistings").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#listings").offset().top-55
+    }, 1000);
+  });
+});
+
+$(document).ready(function() {
+  $("#gotolistings").click(function() {
     $('html, body').animate({
         scrollTop: $("#listings").offset().top-55
     }, 1000);
@@ -52,4 +60,20 @@ $(document).ready(function() {
 
 $(document).ready(function(){
   $('.bxslider').bxSlider();
+});
+
+// Toggle Menu
+
+$(document).ready(function() {
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
 });

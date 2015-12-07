@@ -29,7 +29,7 @@ class PropsController < ApplicationController
 	def create
 		@prop = Prop.new(prop_params)
 
-		respond_to do |format|
+		# respond_to do |format|
 			if @prop.save
 				params[:pics]['item'].each do |a|
 					@pics = @prop.pics.create!(:item => a, :prop_id => @prop.id)
@@ -38,7 +38,7 @@ class PropsController < ApplicationController
 			else
 				render "new"
 			end
-		end
+		# end
 	end
 
 	def destroy
