@@ -1,39 +1,43 @@
 <!-- Nav -->
 <div class="navbar">
 	<!-- <div class="yellow"></div> -->
-	<div class="links"><%= link_to "Home", props_path %>
-		<a href="/" id="goingtoabout">About Us</a>
-		<a href="/" id="goingtolistings">Listings</a>
-		<a href="/">Buyers</a>
-		<a href="/">Sellers</a>
-		<a href="/" id="gotodev">Development</a>
-		<a href="/">Contact</a> </div>
+	<ul class="links">
+		<li id="goingtolistings">Listings</li>
+		<li id="goingtoabout">About</li>
+		<li id="gotodev">Development</li>
+		<li href="/">Buyers</li>
+		<li href="/">Sellers</li>
+		<li href="/">Contact</li>
+	</ul>
 	<div class="bug"><img src="<%= asset_path('LogoBug_3a.svg') %>" alt="Maupin Realty"></div>
 	<div class="bug2"><img src="<%= asset_path('LogoBug.svg') %>" alt="Maupin Realty"></div>
-	</div>
 </div>
 <!-- property-show -->
 
 <!-- images -->
 <div class="prophero">
-		<% @prop.pics.each do |p| %>
-		<%= image_tag p.item_url %>
+
+<a href="/"><div class="icon">x</div></a>
+<ul class="bxslider">
+<% @prop.pics.each do |p| %>
+	<li><%= image_tag p.item_url %></li>
 	<% end %>
+</ul>
 </div>
 <!-- info -->
 <div class="propinfo">
 	<div class="propinfoleft">
 		<div class="b1"><%= @prop.title %></div>
+		<p><%= @prop.description %></p>
+		<button><div class="propinfolink"><a href="blank">View on MLS</a></div></button>  <button type=""> <%= link_to "Home", props_path %></button>
+		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path %></button>
+	</div>
+	<div class="propinforight">
 		<h2><%= @prop.street %> </h2>
 		<h2><%= @prop.city %> </h2>
 		<h2><span>Price: </span> $ <%= @prop.price %></h2>
 		<h2><span>Square Feet: </span><%= @prop.sqft %> sq. ft.</h2>
-		<div><h2><span>Beds: </span><%= @prop.beds %></h2> <h2><span>Baths: </span><%= @prop.baths %></h2></div>
-	</div>
-	<div class="propinforight">
-		<p><%= @prop.description %></p>
-		<button><div class="propinfolink"><a href="blank">View on MLS</a></div></button>  <button type=""> <%= link_to "Home", props_path %></button>
-		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path %></button>
+		<div><h2><span>Beds: </span><%= @prop.beds %> <span>Baths: </span><%= @prop.baths %></h2></div>
 	</div>
 </div>
 

@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require app
+//= require jquery.bxslider
 //= require_tree .
