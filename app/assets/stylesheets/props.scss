@@ -238,15 +238,6 @@ p {
 
 // nav
 
-.yellow {
-		// @include span-columns(5);
-		width: 515px;
-		height: 100%;
-		background-color: $yellow;
-		border-right: 1px solid $grey;
-		
-	}
-
 .navbar {
 	width: 100%;
 	max-width: 1280px;
@@ -256,6 +247,24 @@ p {
 	z-index: 10000;
 	transition: max-width 0.25s ease-out;
 
+	a {
+		font-family: $icon;
+		font-size: 3.5em;
+		color: $yellow;
+		margin-left: 12px; 
+	}
+
+	h4 {
+		display: none;
+		cursor: pointer;
+			@include media($break2) {
+			display: inherit;
+			font-size: 1.1875em;
+			top: -37px;
+    	margin-left: 12px;
+  	}
+	}
+
 	@include media($break1) {
 		max-width: 900px;
 		transition: max-width 0.25s ease-out;
@@ -264,6 +273,8 @@ p {
 	@include media($break2) {
 		max-width: 375px;
 		transition: max-width 0.25s ease-out;
+		min-height: 180px;
+		position: fixed;
 	}
 
 	ul {
@@ -275,21 +286,31 @@ p {
 		cursor: pointer;
 		list-style-type: none;
 
-		// ul {
-		// 	list-style-type: none;
-		// }
+		@include media ($break2) {
+			top: 40px;
+		}
 
 		li {
 			display: inline;
 			color: black;
 			padding: 2px;
 			margin-right: 25px;
+
+			@include media($break2) {
+				display: list-item;
+				margin-right: 0px;
+			}
 		}
 
 		li:hover {
 			color: black;
 			border-bottom: $yellow 2px solid;
-			// transition: border-bottom 0.25s ease-out;
+
+			@include media ($break2) {
+				border-bottom: none;
+				color: $grey3;
+				transition: color 0.25s;
+			}
 		}
 
 	}
@@ -301,21 +322,21 @@ p {
     width: 201px;
     position: absolute;
 
-    @include media($break2) {
+    @include media ($break2) {
     	display: none;
     }
 	}
 
 	.bug2 {
 		display: none;
-  	right: 1.75%;
-		top: 15px;
-		position: fixed;
-		width: 82px;
-		position:absolute;
+    right: 10px;
+    top: 10px;
+    position: fixed;
+    width: 118px;
+    position: absolute;
 
 		@include media($break2) {
-			display: fixed;
+			display: inherit;
 		}
 	}
 
@@ -340,7 +361,7 @@ p {
  	}	
 
  	@include media($break2) {
-  	min-height: 20em;
+  	min-height: 180px;
   	padding-top: 7.75em;
   	background: none;
   	background-color: $yellow;
@@ -510,13 +531,12 @@ input {
 }
 
 .proplinks {
-	font-family: $fontmd;
-	font-size: 1em;
-	background-color: $yellowtrans;
-	outline: solid 5px $yellowtrans; 
-	position: absolute;
-	margin-top: 284px;
-	padding: 4px 4px 0px 4px;
+  font-family: "LubalinGraphStd-Demi";
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  margin-top: 284px;
+  padding: 6px 6px 4px;
 
 	h1:hover {
 		color: $yellow;
@@ -817,11 +837,11 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	// min-height: 500px;
-	background-color: $grey3;
+	background-color: $grey2;
 }
 
 .devinfo {
-	background-color: $grey3;
+	background-color: $grey2;
 	min-width: 100%;
 	@include outer-container();
 	@include span-columns(12);
@@ -837,7 +857,6 @@ input {
   }
 
 	.b1 {
-		color: $yellow;
 
 	@include media($break2) {
 			font-size: 2.5em;
@@ -852,7 +871,7 @@ input {
 	}
 
 	p {
-		color: white;
+		color: black;
 	}
 
 	.bug {
@@ -888,3 +907,17 @@ input {
 .bx-pager-link:active {
 	color: $yellow;
 }
+
+// 
+
+#googlemaps { 
+	@include outer-container();
+	@include span-columns(12);
+	min-height: 550px;
+	min-width: 100%;
+  // position:fixed !important;
+  top: 0; 
+  left: 0; 
+  z-index: 100;
+}
+
