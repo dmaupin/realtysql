@@ -347,7 +347,7 @@ p {
 .hero{
 	@include outer-container();
 	background-color: $yellow;
-  background: url(sunset2.png) fixed;
+  background: url(sunset2bw.png) fixed;
 	background-position: center -250px;
 	background-size: 1280px;
 	background-repeat: no-repeat; 
@@ -363,20 +363,29 @@ p {
  	@include media($break2) {
   	min-height: 180px;
   	padding-top: 7.75em;
-  	background: none;
-  	background-color: $yellow;
+  	// background: none;
+  	// background-color: $yellow;
   	transition: min-height 0.25s ease-out;
  	}	
 
  .logo{
 		// margin: 0 auto;
-		width: 90%;
-		margin-left: 5%; 
-		margin-top: 15%;
+		width: 70%;
+		margin-left: 15%; 
+		margin-top: 15.5%;
 
 		@include media($break2) {
 			display: none;
 		}
+	}
+
+	h3 {
+		margin-top: 0px;
+	}
+
+	h3:hover {
+		color: $grey2;
+		transition: color 0.25s;
 	}
 
 	.bug {
@@ -397,13 +406,13 @@ p {
 #hero2 {
 	display: none;
 	@include media($break2) {
-		display: inherit;
+		// display: inherit;
 	}
 }
 
 #hero1 {
 	@include media($break2) {
-		display: none;
+		// display: none;
 	}
 }
 
@@ -915,9 +924,14 @@ input {
 	@include span-columns(12);
 	min-height: 550px;
 	min-width: 100%;
-  // position:fixed !important;
-  top: 0; 
-  left: 0; 
-  z-index: 100;
+  // top: 0; 
+  // left: 0; 
+  // z-index: 100;
+  margin-bottom: -50px;
+
+  img {
+  	position: absolute;
+  	overflow: hidden;
+  }
 }
 

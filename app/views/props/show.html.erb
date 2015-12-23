@@ -36,7 +36,6 @@
 	</div>
 	<div class="propinforight">
 		<h2><%= @prop.street %> </h2>
-		<h2><%= @prop.city %> </h2>
 		<h2><span>Price: </span> $ <%= @prop.price %></h2>
 		<h2><span>Square Feet: </span><%= @prop.sqft %> sq. ft.</h2>
 		<div><h2><span>Beds: </span><%= @prop.beds %> <span>Baths: </span><%= @prop.baths %></h2></div>
@@ -45,7 +44,7 @@
 
 <!-- Map -->
 
-<div id="googlemaps"><img src-"<%= asset_path('https://maps.googleapis.com/maps/api/staticmap?center=#{@prop.street}&zoom=14&size=300x300&markers=#{address}&sensor=false') %>"></div>
+<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x250&scale=2&sensor=false&zoom=16&style=feature:all|saturation:-100&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
 
 
 <!-- links -->
