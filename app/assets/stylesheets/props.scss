@@ -188,6 +188,16 @@ p {
 	letter-spacing: 1px;
   font-size: 15px;
   text-align: justify;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+
+  @include media ($break2) {
+  	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+  	-moz-column-count: 1; /* Firefox */
+  	column-count: 1;
+  	font-style: .8em;
+  }
 }
 
 .dropcap {
@@ -215,6 +225,10 @@ p {
 	text-align: left;
 	// text-transform: uppercase;
 	line-height: 1;
+
+	@include media($break2) {
+		font-size: 2em;
+	}
 }
 
 .b2 {
@@ -234,6 +248,11 @@ p {
 	border-bottom: 1px solid black;
   padding-bottom: 10px;
   padding-top: 5px;
+	
+	@include media($break2) {
+		font-size: 1em;
+	}
+  
 }
 
 // nav
@@ -629,6 +648,10 @@ input {
     font-size: 80px;
     right: -1222px;
     top: 60px;
+
+    @include media($break1) {
+    	right: -840px;
+    }
 	}
 
 }
@@ -650,6 +673,12 @@ input {
 	.b1 {
 		border-bottom: 1px solid black;
 		padding-bottom: 40px;
+	}
+
+	p {
+		-webkit-column-count: 1; /* Chrome, Safari, Opera */
+  	-moz-column-count: 1; /* Firefox */
+  	column-count: 1;
 	}
 
 	.propinfoleft {
@@ -924,14 +953,21 @@ input {
 	@include span-columns(12);
 	min-height: 550px;
 	min-width: 100%;
-  // top: 0; 
-  // left: 0; 
-  // z-index: 100;
   margin-bottom: -50px;
 
+  @include media($break1) {
+  	margin-bottom: -200px;
+  }
+
   img {
+  	max-width: 100%;
   	position: absolute;
   	overflow: hidden;
+
+  	@include media($break1) {
+  		@include span-columns(6);
+  		max-width: 899px;
+  	}
   }
 }
 
