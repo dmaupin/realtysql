@@ -590,15 +590,12 @@ input {
 // footer
 
 .footer {
-	height: 200px;
+	min-height: 300px;
 	background-color: black;
 	color: white;
 	font-family: $fontsm;
 	font-size: 0.875em;
-	padding-top: 60px;
-	padding-left: 2%;
-	padding-right: 2%;
-	padding-bottom: 60px;
+	padding: 5%;
 
 	a {
 		color: white;
@@ -628,6 +625,7 @@ input {
 		float: right;
 		text-align: center;
 		color: white;
+		background-color: black;
 
 		@include media($break2) {
 			text-align: center;
@@ -886,6 +884,14 @@ input {
 	padding: 5em;
   padding-top: 2.5em;
 
+  p {
+  -webkit-column-count: 1; /* Chrome, Safari, Opera */
+  -moz-column-count: 1; /* Firefox */
+  column-count: 1;
+  }
+
+  // Media Breakpoint 2 - Mobile
+
   @include media($break2) {
   	padding: 2.5em;
 
@@ -905,7 +911,7 @@ input {
 
 	.y1 {
 		color: white;
-		border-color: white;
+		border-color: black;
 	}
 
 	p {
@@ -928,6 +934,57 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	background-color: $grey2;
+}
+
+// Contact
+
+.contact {
+	@include outer-container();
+	@include span-columns(12);
+	min-width: 100%;
+	background-color: $grey3;
+	min-height: 500px;
+	padding: 5em;
+
+	.y1 {
+		border-color: white;
+	}
+
+	h3 {
+		text-align: left;
+		border-color: white;
+	}
+
+	a:hover {
+		color: $grey2;
+	}
+
+	.contactlft {
+		@include span-columns(6);
+		text-align: left;
+		padding-bottom: 78px;
+		border-bottom: 1px solid white;
+
+		@include media($break1){
+			padding-bottom: 45px;
+		}
+	}
+
+	.contactrt {
+		@include span-columns(6);
+		background-image: url("http://maps.google.com/maps/api/staticmap?size=525x325&scale=1&zoom=16&style=feature:all|saturation:-100&markers=#{33.812460}%2C#{-118.328503}");
+		background-position: 50% 50%;
+		background-repeat: none;
+		line-height: 0;
+		height: 325px;
+		margin-top: 42px;
+	}
+
+	img {
+		max-width: 100%;
+		opacity: 0;
+	}
+
 }
 
 // bxslide styles
@@ -953,7 +1010,7 @@ input {
 	@include span-columns(12);
 	min-height: 550px;
 	min-width: 100%;
-  margin-bottom: -50px;
+  margin-bottom: 50px;
 
   @include media($break1) {
   	margin-bottom: -200px;

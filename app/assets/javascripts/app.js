@@ -56,6 +56,14 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $("#gotocontact").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#contact").offset().top+1200
+    }, 1000);
+  });
+});
+
 // initialize bxslider
 
 $(document).ready(function(){

@@ -44,13 +44,8 @@
 
 <!-- Map -->
 
-<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&sensor=false&zoom=16&style=feature:all|saturation:-100&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
-
-
-<!-- links -->
-
-<%= render partial: 'layouts/links' %>
+<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&zoom=16&style=feature:all|saturation:-100&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
 
 <!-- Footer -->
 
-<%= render partial: 'layouts/footer' %>
+<div class="footer"><%= render partial: 'layouts/footer' %></div>
