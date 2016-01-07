@@ -558,6 +558,10 @@ input {
 	}
 }
 
+.prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
+	@include span-columns(12);
+}
+
 .proplinks {
   font-family: "LubalinGraphStd-Demi";
   font-size: 1em;
@@ -586,52 +590,6 @@ input {
   margin-top: 280.65px;
   margin-left: 74px;
 }
-
-// footer
-
-.footer {
-	min-height: 300px;
-	background-color: black;
-	color: white;
-	font-family: $fontsm;
-	font-size: 0.875em;
-	padding: 5%;
-
-	a {
-		color: white;
-	}
-
-	a:hover {
-		color: $yellow;
-	}
-
-	i {
-		color: $grey3;
-	}
-}
-
-	#footlinks {
-		@include span-columns(4);
-		@include omega();
-
-		@include media($break2) {
-	  	display: none;
-	 }
-
-	}
-
-	#footinfo {
-		@include span-columns(12);
-		float: right;
-		text-align: center;
-		color: white;
-		background-color: black;
-
-		@include media($break2) {
-			text-align: center;
-			float: none;
-		}
-	}
 
 // show page
 
@@ -942,7 +900,7 @@ input {
 	@include outer-container();
 	@include span-columns(12);
 	min-width: 100%;
-	background-color: $grey3;
+	background-color: $yellow;
 	min-height: 500px;
 	padding: 5em;
 
@@ -972,7 +930,7 @@ input {
 
 	.contactrt {
 		@include span-columns(6);
-		background-image: url("http://maps.google.com/maps/api/staticmap?size=525x325&scale=1&zoom=16&style=feature:all|saturation:-100&markers=#{33.812460}%2C#{-118.328503}");
+		background-image: url("http://maps.google.com/maps/api/staticmap?size=525x325&scale=1&zoom=15&style=feature:all|saturation:-100&markers=#{33.812460}%2C#{-118.328503}");
 		background-position: 50% 50%;
 		background-repeat: none;
 		line-height: 0;
@@ -986,6 +944,64 @@ input {
 	}
 
 }
+
+// footer
+
+.footer {
+	@include span-columns(12);
+	@include omega();	
+	min-height: 150px;
+	background-color: white;
+	color: white;
+	font-family: $fontsm;
+	font-size: 0.875em;
+	padding: 5%;
+	text-align: center;
+
+	h3 {
+		font-family: $fontsm;
+		color: black;
+		font-size: 0.8em;
+	}
+
+	i {
+		color: $grey3;
+	}
+}
+
+.footlinks {
+	@include span-columns(12);
+	@include omega();
+	padding-left: 0px;
+
+	@include media($break2) {
+	  display: none;
+	}
+	
+	ul {
+
+		text-align: center;
+		list-style-type: none;
+	}
+
+	li {
+		color: black;
+		display: inline;
+	}
+
+	li:hover {
+		color: black;
+		border-bottom: $yellow 2px solid;
+
+		@include media ($break2) {
+			border-bottom: none;
+			color: $grey3;
+			transition: color 0.25s;
+		}
+	}	
+
+}
+
 
 // bxslide styles
 
