@@ -1,19 +1,21 @@
 <!-- Nav -->
+
 <div class="navbar">
-	<!-- <div class="yellow"></div> -->
-	<ul class="links">
+	<h4 id="close">X</h4><!-- <h4 id="open">Menu</h4> -->
+ 	<ul class="links">
 		<li id="goingtolistings">Listings</li>
-		<li id="goingtoabout">About</li>
+		<li id="goingtoabout">Info</li>
 		<li id="gotodev">Development</li>
-		<li href="/">Buyers</li>
-		<li href="/">Sellers</li>
-		<li href="/">Contact</li>
+		<li >Buyers</li>
+		<li >Sellers</li>
+		<li >Contact</li>
 	</ul>
 	<div class="bug"><img src="<%= asset_path('LogoBug_3a.svg') %>" alt="Maupin Realty"></div>
-	<div class="bug2"><img src="<%= asset_path('LogoBug.svg') %>" alt="Maupin Realty"></div>
+	<div class="bug2"><img src="<%= asset_path('LogoTwo.svg') %>" alt="Maupin Realty"></div>
 </div>
-<!-- property-show -->
 
+<!-- property-show -->
+<div class="hero" id="hero2"></div>
 <!-- images -->
 <div class="prophero">
 
@@ -34,17 +36,16 @@
 	</div>
 	<div class="propinforight">
 		<h2><%= @prop.street %> </h2>
-		<h2><%= @prop.city %> </h2>
 		<h2><span>Price: </span> $ <%= @prop.price %></h2>
 		<h2><span>Square Feet: </span><%= @prop.sqft %> sq. ft.</h2>
 		<div><h2><span>Beds: </span><%= @prop.beds %> <span>Baths: </span><%= @prop.baths %></h2></div>
 	</div>
 </div>
 
-<!-- links -->
+<!-- Map -->
 
-<%= render partial: 'layouts/links' %>
+<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&zoom=15&style=feature:all|saturation:-100&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
 
 <!-- Footer -->
 
-<%= render partial: 'layouts/footer' %>
+<div class="footer"><%= render partial: 'layouts/footer' %></div>

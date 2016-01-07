@@ -188,6 +188,16 @@ p {
 	letter-spacing: 1px;
   font-size: 15px;
   text-align: justify;
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+
+  @include media ($break2) {
+  	-webkit-column-count: 1; /* Chrome, Safari, Opera */
+  	-moz-column-count: 1; /* Firefox */
+  	column-count: 1;
+  	font-style: .8em;
+  }
 }
 
 .dropcap {
@@ -215,6 +225,10 @@ p {
 	text-align: left;
 	// text-transform: uppercase;
 	line-height: 1;
+
+	@include media($break2) {
+		font-size: 2em;
+	}
 }
 
 .b2 {
@@ -234,18 +248,14 @@ p {
 	border-bottom: 1px solid black;
   padding-bottom: 10px;
   padding-top: 5px;
+	
+	@include media($break2) {
+		font-size: 1em;
+	}
+  
 }
 
 // nav
-
-.yellow {
-		// @include span-columns(5);
-		width: 515px;
-		height: 100%;
-		background-color: $yellow;
-		border-right: 1px solid $grey;
-		
-	}
 
 .navbar {
 	width: 100%;
@@ -256,6 +266,24 @@ p {
 	z-index: 10000;
 	transition: max-width 0.25s ease-out;
 
+	a {
+		font-family: $icon;
+		font-size: 3.5em;
+		color: $yellow;
+		margin-left: 12px; 
+	}
+
+	h4 {
+		display: none;
+		cursor: pointer;
+			@include media($break2) {
+			display: inherit;
+			font-size: 1.1875em;
+			top: -37px;
+    	margin-left: 12px;
+  	}
+	}
+
 	@include media($break1) {
 		max-width: 900px;
 		transition: max-width 0.25s ease-out;
@@ -264,6 +292,8 @@ p {
 	@include media($break2) {
 		max-width: 375px;
 		transition: max-width 0.25s ease-out;
+		min-height: 180px;
+		position: fixed;
 	}
 
 	ul {
@@ -275,21 +305,31 @@ p {
 		cursor: pointer;
 		list-style-type: none;
 
-		// ul {
-		// 	list-style-type: none;
-		// }
+		@include media ($break2) {
+			top: 40px;
+		}
 
 		li {
 			display: inline;
 			color: black;
 			padding: 2px;
 			margin-right: 25px;
+
+			@include media($break2) {
+				display: list-item;
+				margin-right: 0px;
+			}
 		}
 
 		li:hover {
 			color: black;
 			border-bottom: $yellow 2px solid;
-			// transition: border-bottom 0.25s ease-out;
+
+			@include media ($break2) {
+				border-bottom: none;
+				color: $grey3;
+				transition: color 0.25s;
+			}
 		}
 
 	}
@@ -301,21 +341,21 @@ p {
     width: 201px;
     position: absolute;
 
-    @include media($break2) {
+    @include media ($break2) {
     	display: none;
     }
 	}
 
 	.bug2 {
 		display: none;
-  	right: 1.75%;
-		top: 15px;
-		position: fixed;
-		width: 82px;
-		position:absolute;
+    right: 10px;
+    top: 10px;
+    position: fixed;
+    width: 118px;
+    position: absolute;
 
 		@include media($break2) {
-			display: fixed;
+			display: inherit;
 		}
 	}
 
@@ -326,7 +366,7 @@ p {
 .hero{
 	@include outer-container();
 	background-color: $yellow;
-  background: url(sunset2.png) fixed;
+  background: url(sunset2bw.png) fixed;
 	background-position: center -250px;
 	background-size: 1280px;
 	background-repeat: no-repeat; 
@@ -340,22 +380,31 @@ p {
  	}	
 
  	@include media($break2) {
-  	min-height: 20em;
+  	min-height: 180px;
   	padding-top: 7.75em;
-  	background: none;
-  	background-color: $yellow;
+  	// background: none;
+  	// background-color: $yellow;
   	transition: min-height 0.25s ease-out;
  	}	
 
  .logo{
 		// margin: 0 auto;
-		width: 90%;
-		margin-left: 5%; 
-		margin-top: 15%;
+		width: 70%;
+		margin-left: 15%; 
+		margin-top: 15.5%;
 
 		@include media($break2) {
 			display: none;
 		}
+	}
+
+	h3 {
+		margin-top: 0px;
+	}
+
+	h3:hover {
+		color: $grey2;
+		transition: color 0.25s;
 	}
 
 	.bug {
@@ -376,13 +425,13 @@ p {
 #hero2 {
 	display: none;
 	@include media($break2) {
-		display: inherit;
+		// display: inherit;
 	}
 }
 
 #hero1 {
 	@include media($break2) {
-		display: none;
+		// display: none;
 	}
 }
 
@@ -509,14 +558,17 @@ input {
 	}
 }
 
+.prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
+	@include span-columns(12);
+}
+
 .proplinks {
-	font-family: $fontmd;
-	font-size: 1em;
-	background-color: $yellowtrans;
-	outline: solid 5px $yellowtrans; 
-	position: absolute;
-	margin-top: 284px;
-	padding: 4px 4px 0px 4px;
+  font-family: "LubalinGraphStd-Demi";
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  margin-top: 284px;
+  padding: 6px 6px 4px;
 
 	h1:hover {
 		color: $yellow;
@@ -539,54 +591,6 @@ input {
   margin-left: 74px;
 }
 
-// footer
-
-.footer {
-	height: 200px;
-	background-color: black;
-	color: white;
-	font-family: $fontsm;
-	font-size: 0.875em;
-	padding-top: 60px;
-	padding-left: 2%;
-	padding-right: 2%;
-	padding-bottom: 60px;
-
-	a {
-		color: white;
-	}
-
-	a:hover {
-		color: $yellow;
-	}
-
-	i {
-		color: $grey3;
-	}
-}
-
-	#footlinks {
-		@include span-columns(4);
-		@include omega();
-
-		@include media($break2) {
-	  	display: none;
-	 }
-
-	}
-
-	#footinfo {
-		@include span-columns(12);
-		float: right;
-		text-align: center;
-		color: white;
-
-		@include media($break2) {
-			text-align: center;
-			float: none;
-		}
-	}
-
 // show page
 
 .prophero{
@@ -600,6 +604,10 @@ input {
     font-size: 80px;
     right: -1222px;
     top: 60px;
+
+    @include media($break1) {
+    	right: -840px;
+    }
 	}
 
 }
@@ -621,6 +629,12 @@ input {
 	.b1 {
 		border-bottom: 1px solid black;
 		padding-bottom: 40px;
+	}
+
+	p {
+		-webkit-column-count: 1; /* Chrome, Safari, Opera */
+  	-moz-column-count: 1; /* Firefox */
+  	column-count: 1;
 	}
 
 	.propinfoleft {
@@ -817,16 +831,24 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	// min-height: 500px;
-	background-color: $grey3;
+	background-color: $grey2;
 }
 
 .devinfo {
-	background-color: $grey3;
+	background-color: $grey2;
 	min-width: 100%;
 	@include outer-container();
 	@include span-columns(12);
 	padding: 5em;
   padding-top: 2.5em;
+
+  p {
+  -webkit-column-count: 1; /* Chrome, Safari, Opera */
+  -moz-column-count: 1; /* Firefox */
+  column-count: 1;
+  }
+
+  // Media Breakpoint 2 - Mobile
 
   @include media($break2) {
   	padding: 2.5em;
@@ -837,7 +859,6 @@ input {
   }
 
 	.b1 {
-		color: $yellow;
 
 	@include media($break2) {
 			font-size: 2.5em;
@@ -848,11 +869,11 @@ input {
 
 	.y1 {
 		color: white;
-		border-color: white;
+		border-color: black;
 	}
 
 	p {
-		color: white;
+		color: black;
 	}
 
 	.bug {
@@ -873,6 +894,115 @@ input {
 	background-color: $grey2;
 }
 
+// Contact
+
+.contact {
+	@include outer-container();
+	@include span-columns(12);
+	min-width: 100%;
+	background-color: $yellow;
+	min-height: 500px;
+	padding: 5em;
+
+	.y1 {
+		border-color: white;
+	}
+
+	h3 {
+		text-align: left;
+		border-color: white;
+	}
+
+	a:hover {
+		color: $grey2;
+	}
+
+	.contactlft {
+		@include span-columns(6);
+		text-align: left;
+		padding-bottom: 78px;
+		border-bottom: 1px solid white;
+
+		@include media($break1){
+			padding-bottom: 45px;
+		}
+	}
+
+	.contactrt {
+		@include span-columns(6);
+		background-image: url("http://maps.google.com/maps/api/staticmap?size=525x325&scale=1&zoom=15&style=feature:all|saturation:-100&markers=#{33.812460}%2C#{-118.328503}");
+		background-position: 50% 50%;
+		background-repeat: none;
+		line-height: 0;
+		height: 325px;
+		margin-top: 42px;
+	}
+
+	img {
+		max-width: 100%;
+		opacity: 0;
+	}
+
+}
+
+// footer
+
+.footer {
+	@include span-columns(12);
+	@include omega();	
+	min-height: 150px;
+	background-color: white;
+	color: white;
+	font-family: $fontsm;
+	font-size: 0.875em;
+	padding: 5%;
+	text-align: center;
+
+	h3 {
+		font-family: $fontsm;
+		color: black;
+		font-size: 0.8em;
+	}
+
+	i {
+		color: $grey3;
+	}
+}
+
+.footlinks {
+	@include span-columns(12);
+	@include omega();
+	padding-left: 0px;
+
+	@include media($break2) {
+	  display: none;
+	}
+	
+	ul {
+
+		text-align: center;
+		list-style-type: none;
+	}
+
+	li {
+		color: black;
+		display: inline;
+	}
+
+	li:hover {
+		color: black;
+		border-bottom: $yellow 2px solid;
+
+		@include media ($break2) {
+			border-bottom: none;
+			color: $grey3;
+			transition: color 0.25s;
+		}
+	}	
+
+}
+
+
 // bxslide styles
 
 .bx-wrapper {
@@ -888,3 +1018,29 @@ input {
 .bx-pager-link:active {
 	color: $yellow;
 }
+
+// 
+
+#googlemaps { 
+	@include outer-container();
+	@include span-columns(12);
+	min-height: 550px;
+	min-width: 100%;
+  margin-bottom: 50px;
+
+  @include media($break1) {
+  	margin-bottom: -200px;
+  }
+
+  img {
+  	max-width: 100%;
+  	position: absolute;
+  	overflow: hidden;
+
+  	@include media($break1) {
+  		@include span-columns(6);
+  		max-width: 899px;
+  	}
+  }
+}
+
