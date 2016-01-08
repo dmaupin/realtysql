@@ -558,10 +558,6 @@ input {
 	}
 }
 
-.prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
-	@include span-columns(12);
-}
-
 .proplinks {
   font-family: "LubalinGraphStd-Demi";
   font-size: 1em;
@@ -950,12 +946,12 @@ input {
 .footer {
 	@include span-columns(12);
 	@include omega();	
-	min-height: 150px;
+	min-height: 100px;
 	background-color: white;
 	color: white;
 	font-family: $fontsm;
 	font-size: 0.875em;
-	padding: 5%;
+	padding: 2.5%;
 	text-align: center;
 
 	h3 {
