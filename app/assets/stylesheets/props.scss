@@ -555,7 +555,7 @@ input {
 }
 
 .prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
- 	@include span-columns(12);
+ 	display: none;
  }
 
 .proplinks {
