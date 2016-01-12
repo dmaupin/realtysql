@@ -554,6 +554,10 @@ input {
 	}
 }
 
+.prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
+ 	@include span-columns(12);
+ }
+
 .proplinks {
   font-family: "LubalinGraphStd-Demi";
   font-size: 1em;
