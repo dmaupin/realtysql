@@ -3,48 +3,48 @@
 <div class="navbar">
 	<h4 id="close">X</h4><!-- <h4 id="open">Menu</h4> -->
  	<ul class="links">
-		<li id="goingtolistings">Listings</li>
-		<li id="goingtoabout">Info</li>
-		<li id="gotodev">Development</li>
-		<li >Buyers</li>
-		<li >Sellers</li>
-		<li >Contact</li>
+		<li id="goingtolistings"><%= link_to "Listings", props_path %></li>
+		<li id="goingtoabout"><%= link_to "Info", props_path %></li>
+		<li id="gotodev"><%= link_to "Development", props_path %></li>
+		<li ><%= link_to "Contact", props_path %></li>
 	</ul>
 	<div class="bug"><img src="<%= asset_path('LogoBug_3a.svg') %>" alt="Maupin Realty"></div>
 	<div class="bug2"><img src="<%= asset_path('LogoTwo.svg') %>" alt="Maupin Realty"></div>
 </div>
 
-<!-- property-show -->
-<div class="hero" id="hero2"></div>
 <!-- images -->
-<div class="prophero">
 
-<a href="/"><div class="icon">x</div></a>
-<ul class="bxslider">
-<% @prop.pics.each do |p| %>
-	<li><%= image_tag p.item_url %></li>
-	<% end %>
-</ul>
+<div class="prophero">
+	<a href="/"><div class="icon">x</div></a>
+	<ul class="bxslider">
+	<% @prop.pics.each do |p| %>
+		<li><%= image_tag p.item_url %></li>
+		<% end %>
+	</ul>
 </div>
+
 <!-- info -->
+
 <div class="propinfo">
-	<div class="propinfoleft">
 		<div class="b1"><%= @prop.title %></div>
-		<p><%= @prop.description %></p>
-		<button><div class="propinfolink"><a href="blank">View on MLS</a></div></button>  <button type=""> <%= link_to "Home", props_path %></button>
-		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path %></button>
-	</div>
-	<div class="propinforight">
-		<h2><%= @prop.street %> </h2>
-		<h2><span>Price: </span> $ <%= @prop.price %></h2>
-		<h2><span>Square Feet: </span><%= @prop.sqft %> sq. ft.</h2>
-		<div><h2><span>Beds: </span><%= @prop.beds %> <span>Baths: </span><%= @prop.baths %></h2></div>
-	</div>
+		<div class="propinfoleft">
+			<h2><span>Address:</span> <%= @prop.street %> </h2>
+			<h2><span>Price: </span> $<%= @prop.price %></h2>
+			<h2><span>Square Feet: </span><%= @prop.sqft %> sq. ft.</h2>
+			<div><h2><span>Beds: </span><%= @prop.beds %>  <span>Baths: </span><%= @prop.baths %></h2></div>	
+		</div>
+		<div class="propinforight">
+			<p><%= @prop.description %></p>
+		</div>
+		<div class="border">
+		<button type=""> <%= link_to "All Listings", props_path %></button>
+		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path, class: "warning" %></button>
+		</div>
 </div>
 
 <!-- Map -->
 
-<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&zoom=15&style=feature:all|saturation:-100&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
+<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&zoom=15&style=feature:all|saturation:-100|gamma:0.7&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
 
 <!-- Footer -->
 
