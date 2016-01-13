@@ -759,8 +759,8 @@ input {
 	min-height: 25em;
 	padding: 5em;
 	min-height: 710px;
-  padding: 5em;
-  padding-top: 9em;
+  padding-top: 7.25em;
+  padding-bottom: 7.25em;
 
   @include media($break1) {
   	padding-top: 5em;
@@ -796,7 +796,6 @@ input {
     display: block;
     margin-right: 0%;
     width: 50%;
-    padding-top: 0px;
     margin-left: 193px;
 	}
 
@@ -812,10 +811,12 @@ input {
 		background-image: url(doug.png);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: 28px;
+    margin-left: 1.5625em;
+    margin-top: 2.5em;
 
     @include media($break1) {
     	margin-left: 0px;
+    	margin-top: 0em;
     }
 
 		@include media($break2) {
@@ -864,6 +865,8 @@ input {
 	@include span-columns(12);
 	padding: 5em;
   padding-top: 2.5em;
+  padding-bottom: 7em;
+
 
   .y1 span {
   	font-family: $fontsm;
@@ -939,6 +942,8 @@ input {
 	background-color: $yellow;
 	min-height: 500px;
 	padding: 5em;
+	padding-bottom: 7.25em;
+
 
 	.y1 {
 		border-color: white;
@@ -986,12 +991,13 @@ input {
 .footer {
 	@include span-columns(12);
 	@include omega();	
-	min-height: 100px;
+	max-height: 7.25em;
+	min-height: 7.25em;
 	background-color: white;
 	color: white;
 	font-family: $fontsm;
 	font-size: 0.875em;
-	padding: 2.5%;
+	padding: 1.25em;
 	text-align: center;
 
 	h3 {
