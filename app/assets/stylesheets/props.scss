@@ -55,8 +55,8 @@ $yellowtrans: rgba(253,222,44,0.9);
 $grey: #f2f2f2;
 $grey2: #D9D9D9;
 $grey3: #717171;
+$grey4:#f9f9f9;
 $red: #FF000D;
-
 
 $break1: new-breakpoint(max-width 1279px 6);
 $break2: new-breakpoint(max-width 899px 6);
@@ -71,7 +71,7 @@ $icon: 'maupinicon'; // Icons
 body {
 	font-family: $fontsm;
 	font-size: 100%;
-  margin: 0px;
+  margin: 0em;
   background-color: $grey;
   font-family: sans-serif;
   max-width: 1280px;
@@ -122,10 +122,8 @@ button {
 	background-color: white;
 	border-radius: 0px;
 	font-family: $fontmd;
-	height: 30px;
-	padding-left: 10px;
-	padding-right: 10px;
-	padding-top: 5px;
+	height: 1.875em;
+  padding: 1em 1em 2em 1em;
 }
 
 button:hover {
@@ -140,12 +138,12 @@ button:hover {
 h1 {
 	font-weight: normal;
 	font-family: $fontsm;
-	font-size: 2.25em;
+	font-size: 1.85em;
 	text-align: left;
 	background-color:rgba(255, 255, 255, 0.9);
 	position: absolute;
 	line-height: 1;
-	padding: 10px 10px 7px 10px;
+	padding: 0.35em 0.35em 0.15em 0.35em;
 }
 
 h3 {
@@ -160,13 +158,13 @@ h3 {
 h4 { 
 	font-weight: normal;
 	font-family: $fontsm;
-	font-size: 1.75em;
+	font-size: 1.25em;
 	text-align: left;
 	background-color: $yellowtrans;
 	position: absolute;
 	line-height: 1;
-  margin-top: 48px;
-  padding: 10px 10px 5px 10px;
+  margin-top: 2.25em;
+  padding: 0.45em 0.45em 0.25em 0.45em;
 }
 
 // Show-Property Price + Sq. Ft
@@ -187,7 +185,7 @@ p {
 	color: black;
 	letter-spacing: .05em;
 	line-height: 1.5;
-  font-size: 15px;
+  font-size: 0.9375em;
   text-align: justify;
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
   -moz-column-count: 2; /* Firefox */
@@ -206,8 +204,8 @@ p {
 	font-size: 3em;
 	float: left;
 	line-height: 1.1;
-  margin-bottom: -8px;
-  padding-right: 3px;
+  margin-bottom: -0.5em;
+  padding-right: 0.1875em;
 }
 
 .kernless {
@@ -247,8 +245,8 @@ p {
 	font-size: 1.5em;
 	letter-spacing: -2;
 	border-bottom: 1px solid black;
-  padding-bottom: 10px;
-  padding-top: 5px;
+  padding-bottom: 0.625em;
+  padding-top: 0.3125em;
 	
 	@include media($break2) {
 		font-size: 1em;
@@ -261,7 +259,8 @@ p {
 .navbar {
 	width: 100%;
 	max-width: 1280px;
-	height: 55px;
+	height: 3.4375em;
+	top: 0em;
 	background-color: white;
 	position: fixed;
 	z-index: 10000;
@@ -275,7 +274,7 @@ p {
 				display: inherit;
 				font-size: 1.1875em;
 				top: -37px;
-	    	margin-left: 12px;
+	    	margin-left: 0.75em;
   		}
 	}
 
@@ -284,7 +283,7 @@ p {
 		transition: max-width 0.25s ease-out;
 	}
 
-	@include media($break2) {
+	@include media($break2) { // !!!!!
 		max-width: 375px;
 		transition: max-width 0.25s ease-out;
 		min-height: 180px;
@@ -294,25 +293,25 @@ p {
 	ul {
 		font-family: $fontmd;
 		font-size: .85em;
-		left: -30px;
-		top: 8px;
+		left: -1.875em;
+		top: 0.5em;
 		position:absolute;
 		cursor: pointer;
 		list-style-type: none;
 
 		@include media ($break2) {
-			top: 40px;
+			top: 2.5em;
 		}
 
 		li {
 			display: inline;
 			color: black;
-			padding: 2px;
-			margin-right: 25px;
+			padding: 0.125em;
+			margin-right: 1.5625em;
 
 			@include media($break2) {
 				display: list-item;
-				margin-right: 0px;
+				margin-right: 0em;
 			}
 		}
 
@@ -330,10 +329,10 @@ p {
 	}
 
 	.bug {
-    right: 10px;
-    top: 10px;
+    right: 0.625em;
+    top: 0.625em;
     position: fixed;
-    width: 201px;
+    width: 12.5625em;
     position: absolute;
 
     @include media ($break2) {
@@ -343,10 +342,10 @@ p {
 
 	.bug2 {
 		display: none;
-    right: 10px;
-    top: 10px;
+    right: 0.625em;
+    top: 0.625em;
     position: fixed;
-    width: 118px;
+    width: 7.375em;
     position: absolute;
 
 		@include media($break2) {
@@ -362,7 +361,7 @@ p {
 	@include outer-container();
 	background-color: $yellow;
   background: url(sunset2bw.png) fixed;
-	background-position: center -250px;
+	background-position: center -15.625em;
 	background-size: 1280px;
 	background-repeat: no-repeat; 
 	min-width: 100%;
@@ -375,15 +374,12 @@ p {
  	}	
 
  	@include media($break2) {
-  	min-height: 180px;
+  	min-height: 11.25em;
   	padding-top: 7.75em;
-  	// background: none;
-  	// background-color: $yellow;
   	transition: min-height 0.25s ease-out;
  	}	
 
  .logo{
-		// margin: 0 auto;
 		width: 70%;
 		margin-left: 15%; 
 		margin-top: 15.5%;
@@ -394,7 +390,7 @@ p {
 	}
 
 	h3 {
-		margin-top: 0px;
+		margin-top: 0em;
 	}
 
 	h3:hover {
@@ -412,7 +408,6 @@ p {
 		font-size: 39em;
 		text-align: center;
 		color: $yellow;
-		// margin-top: 10%;
 	}
 
 }
@@ -420,46 +415,19 @@ p {
 #hero2 {
 	display: none;
 	@include media($break2) {
-		// display: inherit;
 	}
 }
 
 #hero1 {
 	@include media($break2) {
-		// display: none;
 	}
 }
-
-// email list
-
-input {
-	width: 100%;
-  // height: 4em;
-  height: 6vh;
-  border-radius: 2.5px;
-  border: none;
-  margin-bottom: 2px;
-  padding-left: 1em;
-  font-family: $fontmd;
-}
-
-.subbtn {
-	background-color: $yellow;
-}
-
-.subbtn:hover {
-	transition: .2s;
-	background-color: #F0D02B;
-	cursor: pointer;
-}
-
 
 // sections
 
 .sectiontitle {
 	margin-right: 2em;
 	font-family: $fontmd;
-	// background-color: $yellow;
 }
 
 #margin {
@@ -469,23 +437,23 @@ input {
 	z-index: -1;
 	height: 100%;
 	left: 0;
-	margin-top: 100px;
+	margin-top: 6.25em;
 }
 
 .sectionlink {
 	@include span-columns(6);
 	@include omega();
 	background-color: $yellow;
-	min-height: 355px;
-	padding-top: 20px;
+	min-height: 22.1875em;
+	padding-top: 1.25em;
 
 	@include media($break1) {
-		min-height: 275px;
+		min-height: 0.0625em;
 		transition: min-height 0.25s ease-out;
 	}
 
 	@include media($break2) {
-		min-height: 135px;
+		min-height: 8.4375em;
 		transition: min-height 0.25s ease-out;
 	}
 }
@@ -501,8 +469,8 @@ input {
 
 	.b1 {
 	  font-size: 5vw;
-	  line-height: 45px;
-	  margin-bottom: -17px;
+	  line-height: 2.8125;
+	  margin-bottom: -1.0625em;
 	}
 
 	h5 {
@@ -519,7 +487,7 @@ input {
 .container {
 	@include outer-container();
 	min-width: 100%;
-	background-color: #f9f9f9;
+	background-color: $grey4;
 }
 
 .prop {
@@ -527,56 +495,50 @@ input {
 	@include span-columns(6);
 	@include omega();
 	width: 50%;
-	font-size: .75em;
-	background-color: #f9f9f9;
+	background-color: $grey4;
 	background-position: center;
 	background-size: cover;
 	padding-left: 2%;
 	padding-top: .75%;
-	min-height: 355px;
+	min-height: 24em;
 
 	@include media($break1) {
 		@include span-columns(6);
 		width: 100%;
-    min-height: 40em;
+    min-height: 32em;
     padding-top: .4%;
     transition: min-height 0.25s ease-out;
-    // background-position: 0px -25px;
 	}
 
 	@include media($break2) {
 		min-height: 20em;
 		padding-left: 1.4em;
-
-		h1 {
-
-		}
 	}
 }
 
 .prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
  	display: none;
-}
+} // Displays a filler image if there are an eneven amount of property listings.
 
 .proplinks {
-  font-family: "LubalinGraphStd-Demi";
+  font-family: $fontmd;
   font-size: 1em;
   background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
-  margin-top: 284px;
-  padding: 6px 6px 4px;
+  margin-top: 18.75em;
+  padding: 0.375em 0.375em 0.15em;
 
 	h1:hover {
 		color: $yellow;
 	}
 
 	@include media($break1) {
-		margin-top: 415px;
+		margin-top: 27.8125em;
 		// transition: margin-top 0.25s ease-out;
 	}
 
 	@include media($break2) {
-		margin-top: 190px;
+		margin-top: 11.875em;
 	}
 }
 
@@ -592,19 +554,20 @@ input {
 // show page
 
 .prophero{
+	margin-top: 17.9375em;
 
 	.icon {
 		font-family: $icon;
 		color: $yellow;
 		position: relative;
-    margin-bottom: -58px;
+    margin-bottom: -3.625em;
     z-index: 100;
-    font-size: 80px;
-    right: -1222px;
-    top: 60px;
+    font-size: 5em;
+    right: -76.375em;
+    top: 3.75em;
 
     @include media($break1) {
-    	right: -840px;
+    	right: -52.5em;
     }
 	}
 
@@ -618,9 +581,9 @@ input {
 	padding: 5%;
 	padding-top: 7.25em;
 	padding-bottom: 7.25em;
-	background-color: #f9f9f9;
-	margin-top: -63px;
-	min-height: 600px;
+	background-color: $grey4;
+	margin-top: -3.9375em;
+	min-height: 37.5em;
 
 	span {
 		font-family: $fontmd;
@@ -630,7 +593,7 @@ input {
 
 	.b1 {
 		border-bottom: 1px solid black;
-		padding-bottom: 20px;
+		padding-bottom: 1em;
 	}
 
 	p {
@@ -642,8 +605,8 @@ input {
 	.propinfoleft {
 		@include outer-container();
 		@include span-columns(6);
-		margin-right: 0px;
-		margin-top: 30px;
+		margin-right: 0em;
+		margin-top: 1.875em;
 
 	}
 
@@ -651,8 +614,8 @@ input {
 		@include outer-container();
 		@include span-columns(6);
 		min-width: 50%;
-		margin-right: 0px;
-		margin-top: 30px;
+		margin-right: 0em;
+		margin-top: 1.875em;
 
 	}
 
@@ -666,8 +629,8 @@ input {
 	@include outer-container();
 	@include span-columns(12);
 	border-top: 1px solid black;
-	margin-top: 30px;
-	padding-top: 25px;
+	margin-top: 1.875em;
+	padding-top: 1.5625em;
   min-width: 100%;
 }
 
@@ -679,33 +642,32 @@ input {
 	@include outer-container();
 	@include span-columns(12);
 	background-color: $grey;
-	margin-top: 55px;
+	margin-top: 3.4375em;
 	min-width: 100%;
 	padding-left: 2.5%;
 	padding-right: 2.5%;
 }
 
 .form {
-	margin-top: 70px;
+	margin-top: 4.375em;
 	font-family: $fontmd;
 	min-width: 100%;
 	border-top: 1px white solid;
-	padding-top: 15px;
+	padding-top: 0.9375em;
 	border-bottom: 1px white solid;
 
 	input {
-		margin-bottom: 30px;
-		border-radius: 0px;
-		height: 40px;
+		margin-bottom: 1.875em;
+		border-radius: 0em;
+		height: 2.5em;
 	}
 
 	input[type=submit] {
 		font-family: $fontmd;
-		height: 40px;
+		height: 2.5em;
 		background-color: $yellow;
-		margin-top: 18px;
+		margin-top: 1.125em;
 		@include span-columns(3);
-		// margin-right: 30px;
 		cursor: pointer;
 	}
 
@@ -716,21 +678,20 @@ input {
 
 	button {
 		@include span-columns(1);
-		height: 40px;
+		height: 2.5em;
 		background-color: $red;
-		// float: right;
-		margin-top: 18px;
-		margin-left: 30px;
-		margin-right: 0px;
+		margin-top: 1.125em;
+		margin-left: 1.875em;
+		margin-right: 0em;
 	}
 
 	textarea {
 		appearance: none;
 		@include span-columns(12);
-		margin-bottom: 30px;
-    height: 75px;
+		margin-bottom: 1.875em;
+    height: 4.6875em;
     border: none;
-    padding: 15px;
+    padding: 0.9375em;
 	}
 
 	a {
@@ -758,7 +719,7 @@ input {
 	min-width: 100%;
 	min-height: 25em;
 	padding: 5em;
-	min-height: 710px;
+	min-height: 44.375em;
   padding-top: 7.25em;
   padding-bottom: 7.25em;
 
@@ -771,7 +732,7 @@ input {
   	padding: 2.5em;
 
   	p {
-  		font-size: 12px;
+  		font-size: 0.75em;
   	}
   }
 
@@ -781,14 +742,13 @@ input {
 	@include outer-container();
 	@include span-columns(12);
 	min-width: 100%;
-	// min-height: 500px;
 	background-color: $yellow;
 }
 
 .biolft {
 	@include outer-container();
 	@include span-columns(5);
-	padding-top: 30px;
+	padding-top: 1.875em;
 
 	@include media($break1) {
 		@include span-columns(6);
@@ -796,18 +756,18 @@ input {
     display: block;
     margin-right: 0%;
     width: 50%;
-    margin-left: 193px;
+    margin-left: 12.0625em;
 	}
 
 	@include media($break2) {
-		margin-left: 44px;
+		margin-left: 2.75em;
 	}
 
 	.portrait {
 		border-radius: 100%;
 		background-color: $yellow;
-		width: 350px;
-		height: 350px;
+		width: 21.875em;
+		height: 21.875em;
 		background-image: url(doug.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -815,14 +775,14 @@ input {
     margin-top: 2.5em;
 
     @include media($break1) {
-    	margin-left: 0px;
+    	margin-left: 0em;
     	margin-top: 0em;
     }
 
 		@include media($break2) {
-			width: 200px;
-			height: 200px;
-			margin-left: 0px;
+			width: 12.5em;
+			height: 12.5em;
+			margin-left: 0em;
 		}
 	}
 }
@@ -836,14 +796,14 @@ input {
 	@include media($break1) {
 		@include span-columns(6);
 		float: none;
-		margin-top: 75px;
+		margin-top: 4.6875em;
 	}
 
 	@include media($break2) {
-		margin-top: 32px;
+		margin-top: 2em;
 
 		.b1 {
-			font-size: 2 em;
+			font-size: 2em;
 		}
 	}
 }
@@ -854,7 +814,6 @@ input {
 	@include outer-container();
 	@include span-columns(12);
 	min-width: 100%;
-	// min-height: 500px;
 	background-color: $grey2;
 }
 
@@ -887,13 +846,11 @@ input {
 		@include span-columns(10);
 	}
 
-  // Media Breakpoint 2 - Mobile
-
   @include media($break2) {
   	padding: 2.5em;
 
   	p {
-  		font-size: 12px;
+  		font-size: 0.75em;
   	}
   }
 
@@ -940,7 +897,7 @@ input {
 	@include span-columns(12);
 	min-width: 100%;
 	background-color: $yellow;
-	min-height: 500px;
+	min-height: 31.25em;
 	padding: 5em;
 	padding-bottom: 7.25em;
 
@@ -961,11 +918,11 @@ input {
 	.contactlft {
 		@include span-columns(6);
 		text-align: left;
-		padding-bottom: 78px;
+		padding-bottom: 4.875em;
 		border-bottom: 1px solid white;
 
 		@include media($break1){
-			padding-bottom: 45px;
+			padding-bottom: 2.8125em;
 		}
 	}
 
@@ -975,8 +932,8 @@ input {
 		background-position: 50% 50%;
 		background-repeat: none;
 		line-height: 0;
-		height: 325px;
-		margin-top: 42px;
+		height: 20.3125em;
+		margin-top: 2.625em;
 	}
 
 	img {
@@ -1014,7 +971,7 @@ input {
 .footlinks {
 	@include span-columns(12);
 	@include omega();
-	padding-left: 0px;
+	padding-left: 0em;
 
 	@include media($break2) {
 	  display: none;
@@ -1044,7 +1001,6 @@ input {
 
 }
 
-
 // bxslide styles
 
 .bx-wrapper {
@@ -1066,12 +1022,12 @@ input {
 #googlemaps { 
 	@include outer-container();
 	@include span-columns(12);
-	min-height: 550px;
+	min-height: 34.375em;
 	min-width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 3.125em;
 
   @include media($break1) {
-  	margin-bottom: -200px;
+  	margin-bottom: -12.5em;
   }
 
   img {
@@ -1081,7 +1037,7 @@ input {
 
   	@include media($break1) {
   		@include span-columns(6);
-  		max-width: 899px;
+  		max-width: 56.1875em;
   	}
   }
 }

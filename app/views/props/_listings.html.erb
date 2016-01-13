@@ -3,7 +3,7 @@
 		<!-- Using an inline style to select the first photo from each property record as the background image  -->
 		<div class="prop" style="background-image: url(<% prop.pics.limit(1).each do |i| %><%= i.item_url %><% end %> );">
 			<h1><%= link_to prop.title, prop_path(prop)%></h1><br>
-			<h4><%= prop.price %></h4>
+			<h4>$<%= prop.price %></h4>
 			<div class="proplinks"><%= link_to "More Info", prop_path(prop)%></div>
 		</div>
 <% end %>
