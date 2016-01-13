@@ -99,7 +99,7 @@ a {
 
 a:hover {
 	color: $grey3;
-	transition: .5s;
+	transition: color .5s;
 }
 
 a:active {
@@ -119,8 +119,8 @@ ul {
 button {
 	appearance: none;
 	border: none;
-	background-color: $yellow;
-	border-radius: 3px;
+	background-color: white;
+	border-radius: 0px;
 	font-family: $fontmd;
 	height: 30px;
 	padding-left: 10px;
@@ -129,8 +129,8 @@ button {
 }
 
 button:hover {
-	color: $grey2;
-	transition: .5s;
+	color: $grey3;
+	transition: .2s;
 }
 
 // TYPOGRAPHY
@@ -185,7 +185,8 @@ h2 {
 p {
 	font-family: $fontsm;
 	color: black;
-	letter-spacing: 1px;
+	letter-spacing: .05em;
+	line-height: 1.5;
   font-size: 15px;
   text-align: justify;
   -webkit-column-count: 2; /* Chrome, Safari, Opera */
@@ -202,7 +203,7 @@ p {
 
 .dropcap {
 	font-family: $fontmd;
-	font-size: 2.7em;
+	font-size: 3em;
 	float: left;
 	line-height: 1.1;
   margin-bottom: -8px;
@@ -233,7 +234,7 @@ p {
 
 .b2 {
 	font-family: $fontmd;
-	color: white;
+	color: $grey3;
 	font-size: 2.15rem;
 	text-align: left;
 	line-height: 1;
@@ -266,22 +267,16 @@ p {
 	z-index: 10000;
 	transition: max-width 0.25s ease-out;
 
-	a {
-		font-family: $icon;
-		font-size: 3.5em;
-		color: $yellow;
-		margin-left: 12px; 
-	}
-
 	h4 {
-		display: none;
-		cursor: pointer;
+			display: none;
+			cursor: pointer;
+			
 			@include media($break2) {
-			display: inherit;
-			font-size: 1.1875em;
-			top: -37px;
-    	margin-left: 12px;
-  	}
+				display: inherit;
+				font-size: 1.1875em;
+				top: -37px;
+	    	margin-left: 12px;
+  		}
 	}
 
 	@include media($break1) {
@@ -523,16 +518,17 @@ input {
 
 .container {
 	@include outer-container();
-	min-width: 102.45%;
-	// margin-top: 4em;
+	min-width: 100%;
+	background-color: #f9f9f9;
 }
 
 .prop {
 	// Background image is queryed from corresponding object
 	@include span-columns(6);
 	@include omega();
+	width: 50%;
 	font-size: .75em;
-	background-color: $grey;
+	background-color: #f9f9f9;
 	background-position: center;
 	background-size: cover;
 	padding-left: 2%;
@@ -541,11 +537,11 @@ input {
 
 	@include media($break1) {
 		@include span-columns(6);
-		width: 97.65%;
-    min-height: 34.25em;
+		width: 100%;
+    min-height: 40em;
     padding-top: .4%;
     transition: min-height 0.25s ease-out;
-    background-position: inherit;
+    // background-position: 0px -25px;
 	}
 
 	@include media($break2) {
@@ -556,6 +552,10 @@ input {
 
 		}
 	}
+}
+
+.prop:nth-last-of-type(-n+1):not(:nth-child(even)) {
+ 	display: none;
 }
 
 .proplinks {
@@ -571,7 +571,7 @@ input {
 	}
 
 	@include media($break1) {
-		margin-top: 355px;
+		margin-top: 415px;
 		// transition: margin-top 0.25s ease-out;
 	}
 
@@ -580,11 +580,13 @@ input {
 	}
 }
 
-.arrow {
-  height: 2em;
-  position: absolute;
-  margin-top: 280.65px;
-  margin-left: 74px;
+#slug {
+	background-image: url(plan.png);
+	background-size: cover;
+
+	h1 {
+		color: $grey3;
+	}
 }
 
 // show page
@@ -614,17 +616,21 @@ input {
 	font-family: $fontmd;
 	min-width: 100%;
 	padding: 5%;
-	background-color: $grey2;
-	margin-top: -60px;
+	padding-top: 7.25em;
+	padding-bottom: 7.25em;
+	background-color: #f9f9f9;
+	margin-top: -63px;
+	min-height: 600px;
 
 	span {
 		font-family: $fontmd;
-		color: white;
+		color: $grey3;
+		font-size: .5em;
 	}
 
 	.b1 {
 		border-bottom: 1px solid black;
-		padding-bottom: 40px;
+		padding-bottom: 20px;
 	}
 
 	p {
@@ -636,18 +642,33 @@ input {
 	.propinfoleft {
 		@include outer-container();
 		@include span-columns(6);
+		margin-right: 0px;
+		margin-top: 30px;
+
 	}
 
 	.propinforight {
 		@include outer-container();
 		@include span-columns(6);
-		margin-top: 65px;
+		min-width: 50%;
+		margin-right: 0px;
+		margin-top: 30px;
+
 	}
 
 	a:hover {
-		color: $grey;
+		color: $grey3;
 	}
 
+}
+
+.border {
+	@include outer-container();
+	@include span-columns(12);
+	border-top: 1px solid black;
+	margin-top: 30px;
+	padding-top: 25px;
+  min-width: 100%;
 }
 
 // Forms
@@ -721,6 +742,11 @@ input {
 .warning {
 	color: white;
 	background-color: $red;
+	float: right;
+}
+
+.warning:hover a {
+	color: $grey2;
 }
 
 // bio
@@ -733,8 +759,8 @@ input {
 	min-height: 25em;
 	padding: 5em;
 	min-height: 710px;
-  padding: 5em;
-  padding-top: 9em;
+  padding-top: 7.25em;
+  padding-bottom: 7.25em;
 
   @include media($break1) {
   	padding-top: 5em;
@@ -770,7 +796,6 @@ input {
     display: block;
     margin-right: 0%;
     width: 50%;
-    padding-top: 0px;
     margin-left: 193px;
 	}
 
@@ -786,10 +811,12 @@ input {
 		background-image: url(doug.png);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: 28px;
+    margin-left: 1.5625em;
+    margin-top: 2.5em;
 
     @include media($break1) {
     	margin-left: 0px;
+    	margin-top: 0em;
     }
 
 		@include media($break2) {
@@ -804,6 +831,7 @@ input {
 	@include outer-container();
 	@include span-columns(7);
 	float: right;
+	border-bottom: 1px solid black;
 
 	@include media($break1) {
 		@include span-columns(6);
@@ -837,12 +865,27 @@ input {
 	@include span-columns(12);
 	padding: 5em;
   padding-top: 2.5em;
+  padding-bottom: 7em;
+
+
+  .y1 span {
+  	font-family: $fontsm;
+  }
+
+  img {
+  	max-width: 100%;
+  	border-bottom: 1px solid black;
+  }
 
   p {
   -webkit-column-count: 1; /* Chrome, Safari, Opera */
   -moz-column-count: 1; /* Firefox */
   column-count: 1;
   }
+
+  .clients {
+		@include span-columns(10);
+	}
 
   // Media Breakpoint 2 - Mobile
 
@@ -899,6 +942,8 @@ input {
 	background-color: $yellow;
 	min-height: 500px;
 	padding: 5em;
+	padding-bottom: 7.25em;
+
 
 	.y1 {
 		border-color: white;
@@ -946,12 +991,13 @@ input {
 .footer {
 	@include span-columns(12);
 	@include omega();	
-	min-height: 100px;
+	max-height: 7.25em;
+	min-height: 7.25em;
 	background-color: white;
 	color: white;
 	font-family: $fontsm;
 	font-size: 0.875em;
-	padding: 2.5%;
+	padding: 1.25em;
 	text-align: center;
 
 	h3 {

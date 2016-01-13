@@ -1,10 +1,3 @@
-<!-- Listings -->
-<!-- <div class="list">
-	<div class="devhero" data-speed="2" data-type="background">
-		<img src="<%= asset_path('offerings.svg') %>" alt="Maupin Realty" class="title">
-	</div>
-</div> -->
-
 <div class="container" id="props">
 <% @props.each do |prop| %>
 		<!-- Using an inline style to select the first photo from each property record as the background image  -->
@@ -12,7 +5,9 @@
 			<h1><%= link_to prop.title, prop_path(prop)%></h1><br>
 			<h4><%= prop.price %></h4>
 			<div class="proplinks"><%= link_to "More Info", prop_path(prop)%></div>
-			
 		</div>
 <% end %>
+<div class="prop" id="slug">
+	<div><h1>New Properties are<br> frequently being added.<br>Check back soon.</h1></div>
+</div>
 </div>
