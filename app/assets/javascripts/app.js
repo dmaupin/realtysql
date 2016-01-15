@@ -90,6 +90,6 @@ $(document).ready(function() {
 
 // Slider
 
-    jQuery(document).ready(function($) {
-      $('.my-slider').unslider();
-    });
+jQuery(document).ready(function($) {
+  $('.my-slider').unslider();
+});
