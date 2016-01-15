@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require unslider-min
 //= require app
-//= require jquery.bxslider
 //= require_tree .

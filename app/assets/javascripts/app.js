@@ -72,12 +72,6 @@ $(document).ready(function() {
   });
 });
 
-// initialize bxslider
-
-$(document).ready(function(){
-  $('.bxslider').bxSlider();
-});
-
 // Toggle Menu
 
 $(document).ready(function() {
@@ -94,5 +88,8 @@ $(document).ready(function() {
   });
 });
 
-// Map
+// Slider
 
+    jQuery(document).ready(function($) {
+      $('.my-slider').unslider();
+    });
