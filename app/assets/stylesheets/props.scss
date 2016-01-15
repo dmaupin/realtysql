@@ -513,7 +513,7 @@ p {
   margin-bottom: -3.625em;
   z-index: 100;
   font-size: 3.5em;
-  left: 0.2em;
+  left: 0.25em;
   top: 1.1em;
 }
 
@@ -526,7 +526,6 @@ p {
 	padding-top: 7.25em;
 	padding-bottom: 7.25em;
 	background-color: $grey4;
-	margin-top: -3.9375em;
 	min-height: 37.5em;
 
 	span {
@@ -980,20 +979,132 @@ input {
 
 }
 
-// bxslide styles
+// // slider styles
 
-.bx-wrapper {
-	box-shadow: none;
-  border: none;
-  background: none;
+.unslider{
+	overflow:auto;
+	position: relative;
+	margin:0;
+	padding:0;
+	@include span-columns(12);
+	@include omega();
 }
 
-.bxslider {
+.unslider-wrap{
+	position:relative;
+}
+
+.unslider-wrap.unslider-carousel>li{
+	float:left;
+}
+
+.unslider-vertical>ul{
+	height:100%;
+}
+
+.unslider-vertical li{
+	float:none;
+	width:100%;
+}
+
+.unslider-fade{
+	position:relative;
+}
+
+.unslider-fade .unslider-wrap li{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	z-index:8;
+}
+
+.unslider-fade .unslider-wrap li.unslider-active{
+	z-index:10;
+}
+
+.unslider li,.unslider ol,.unslider ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+	border:none;
+}
+
+//
+
+.unslider-arrow{
+	position:absolute;
+	left:20px;
+	z-index:2;
+	cursor:pointer;
+}
+
+.unslider-arrow.next{
+	left:auto;right:20px;
+}
+
+.unslider-arrow {
+	font-family: $icon;
+	margin-top: -7em;
+	font-size: 4em;
+	color: white;
+}
+
+.unslider-arrow:hover {
+	color: $yellowtrans;
+}
+
+.unslider-arrow .next {
+	float: right;
+	margin-right: 0.25em;
+}
+
+.unslider-arrow .prev {
+	float: left;
+	margin-left: 0.25em;
+}
+
+.unslider-nav ol {
+  list-style: none;
+  text-align: center;
+  background-color: $grey4;
+}
+
+.dev .unslider-nav ol {
+	background-color: $grey2;
+}
+
+.dev .unslider-arrow {
+	margin-top: -6em;
+}
+
+.unslider-nav ol li {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 4px;
+  background: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  text-indent: -999em;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+.unslider-nav ol li.unslider-active {
+  background: #fff;
+  cursor: default;
+}
+
+.unslider-nav ol li {
+	width: 10px;
+	height: 10px;
+	border-color: $yellow;
+	background-color: $yellow;
+}
+
+.unslider-nav ol li.unslider-active {
+	border-color: $grey3;
 	background-color: $grey3;
-}
-
-.bx-pager-link:active {
-	color: $yellow;
 }
 
 // 

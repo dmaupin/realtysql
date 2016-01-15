@@ -14,13 +14,15 @@
 
 <!-- images -->
 <div class="prophero">
-	<a href=""><div class="icon">x</div></a>
+
 </div>
-<ul class="bxslider">
-	<% @prop.pics.each do |p| %>
-	<li><%= image_tag p.item_url %></li>
-	<% end %>
-</ul>
+<div class="my-slider">
+	<ul>
+		<% @prop.pics.each do |p| %>
+			<li><%= image_tag p.item_url %></li>
+		<% end %>
+	</ul>	
+</div>
 
 <!-- info -->
 
