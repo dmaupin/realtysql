@@ -1,6 +1,7 @@
 <!-- Nav -->
 
 <div class="navbar">
+	<h4 id="close">X</h4><!-- <h4 id="open">Menu</h4> -->
  	<ul class="links">
 		<li id="goingtolistings"><%= link_to "Listings", props_path %></li>
 		<li id="goingtoabout"><%= link_to "Info", props_path %></li>
@@ -12,15 +13,14 @@
 </div>
 
 <!-- images -->
-
 <div class="prophero">
 	<a href="/"><div class="icon">x</div></a>
-	<ul class="bxslider">
-	<% @prop.pics.each do |p| %>
-		<li><%= image_tag p.item_url %></li>
-		<% end %>
-	</ul>
 </div>
+<ul class="bxslider">
+	<% @prop.pics.each do |p| %>
+	<li><%= image_tag p.item_url %></li>
+	<% end %>
+</ul>
 
 <!-- info -->
 
@@ -37,7 +37,7 @@
 		</div>
 		<div class="border">
 		<button type=""> <%= link_to "All Listings", props_path %></button>
-		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path, class: "warning" %></button>
+		<!-- <button type="" class="warning"> <%= link_to "Edit", edit_prop_path, class: "warning" %></button> -->
 		</div>
 </div>
 
@@ -47,4 +47,16 @@
 
 <!-- Footer -->
 
-<div class="footer"><%= render partial: 'layouts/footer' %></div>
+<div class="footer">
+	 <ul class="footlinks">
+		<li id="goingtolistingstwo"><a href="/">Listings</a></li> | 
+		<li id="goingtoabout"><a href="/">Info</a></li> | 
+		<li id="gotodev"><a href="/">Development</a></li> | 
+		<li id="gotocontact"><a href="/">Contact</a></li>
+	</ul>
+	<h3> ©2016 | Site Design by <a href="http://www.davidmaupin.com" target="blank"> Daily Ops </h3>
+</div>
+
+
+
+

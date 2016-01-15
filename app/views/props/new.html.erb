@@ -6,28 +6,33 @@
 
 	<!-- flash msg goeas here -->
 
-<%= form_for @prop do |p| %>
-	
-	Name: <%= p.text_field :title %>
-	Address <%= p.text_field :street %>
-	City, State, Zip <%= p.text_field :city %>
-	Price: <%= p.text_field :price %>
-	Square Footage: <%= p.number_field :sqft %>
-	Description: <%= p.text_area :description %><br>
-	MLS url: <%= p.text_field :mls  %>
-	Beds: <%= p.number_field :beds %>
-	Baths <%= p.number_field :baths %>
+	<%= form_for @prop do |p| %>
+		
+		Name:<br>
+		<%= p.text_field :title %><br>
+		Address:<br>
+		<%= p.text_field :street %><br>
+		Price:<br>
+		<%= p.text_field :price %><br>
+		Square Footage:<br>
+		<%= p.number_field :sqft %><br>
+		Description:<br>
+		<%= p.text_area :description %><br>
+		MLS url:<br>
+		<%= p.text_field :mls  %><br>
+		Beds:<br>
+		<%= p.number_field :beds %><br>
+		Baths:<br>
+		<%= p.number_field :baths %><br>
+		<%= p.fields_for :pics do |i| %>
+			<%= i.label :item, "Photos:" %><br/>
+			<%= i.file_field :item, :multiple => true, name: "pics[item][]" %><br/>
+		<%	 end %>
+		<%= p.submit "Add Property" %>
 
-	<%= p.fields_for :pics do |i| %>
-		<%= i.label :item, "Photos" %><br/>
-		<%= i.file_field :item, :multiple => true, name: "pics[item][]" %><br/>
-	<%	 end %>
+		<% end %>
 
-	<%= p.submit "Add Property" %>
-
-	<% end %>
-
-<button><%= link_to "Cancel", props_path %></button>
+	<button><%= link_to "Cancel", props_path %></button>
 
 </div>
 

@@ -64,6 +64,14 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $("#gotolistings").click(function() {
+    $(window).animate({
+        scrollTop: $("#listings").offset().top-55
+    }, 1000);
+  });
+});
+
 // initialize bxslider
 
 $(document).ready(function(){

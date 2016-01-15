@@ -52,10 +52,10 @@
 
 $yellow: #FDDE2C;
 $yellowtrans: rgba(253,222,44,0.9);
-$grey: #f2f2f2;
+$grey: #f1f1f1;
 $grey2: #D9D9D9;
 $grey3: #717171;
-$grey4:#f9f9f9;
+$grey4:#F6F6F6;
 $red: #FF000D;
 
 $break1: new-breakpoint(max-width 1279px 6);
@@ -103,11 +103,7 @@ a:hover {
 }
 
 a:active {
-	background-color: $yellow;
-}
-
-a:active {
-	background-color: $yellow;
+	color: $grey2;
 }
 
 ul {
@@ -118,6 +114,7 @@ ul {
 
 button {
 	appearance: none;
+	-webkit-appearance: none;
 	border: none;
 	background-color: white;
 	border-radius: 0px;
@@ -137,34 +134,38 @@ button:hover {
 
 h1 {
 	font-weight: normal;
-	font-family: $fontsm;
-	font-size: 1.85em;
+	font-family: $fontmd;
+	text-transform: uppercase;
+	font-size: 1.45em;
 	text-align: left;
-	background-color:rgba(255, 255, 255, 0.9);
+	background-color:rgba(255, 255, 255, 0.85);
 	position: absolute;
 	line-height: 1;
-	padding: 0.35em 0.35em 0.15em 0.35em;
+	padding: 0.4em 0.4em 0.2em 0.4em;
 }
 
 h3 {
 	font-family: $fontsm;
 	color: white;
 	text-align: center;
-	cursor: pointer;
 }
 
 // Index-Property price
 
 h4 { 
 	font-weight: normal;
-	font-family: $fontsm;
+	font-family: $fontmd;
 	font-size: 1.25em;
 	text-align: left;
 	background-color: $yellowtrans;
 	position: absolute;
 	line-height: 1;
-  margin-top: 2.25em;
+  margin-top: 1.7em;
   padding: 0.45em 0.45em 0.25em 0.45em;
+
+  span {
+  	font-family: $fontsm;
+  }
 }
 
 // Show-Property Price + Sq. Ft
@@ -174,9 +175,6 @@ h2 {
 	font-family: $fontsm;
 	font-size: 1.5625em;
 	text-align: left;
-	// margin-left: 2%;
-	// text-transform: uppercase;
-	// letter-spacing: -.1em;
 	color: black;
 }
 
@@ -393,11 +391,6 @@ p {
 		margin-top: 0em;
 	}
 
-	h3:hover {
-		color: $grey2;
-		transition: color 0.25s;
-	}
-
 	.bug {
 		width: 90%;
 		margin-left: 5%;
@@ -440,48 +433,6 @@ p {
 	margin-top: 6.25em;
 }
 
-.sectionlink {
-	@include span-columns(6);
-	@include omega();
-	background-color: $yellow;
-	min-height: 22.1875em;
-	padding-top: 1.25em;
-
-	@include media($break1) {
-		min-height: 0.0625em;
-		transition: min-height 0.25s ease-out;
-	}
-
-	@include media($break2) {
-		min-height: 8.4375em;
-		transition: min-height 0.25s ease-out;
-	}
-}
-
-#buyers {
-	background-color: white;
-	color: $yellow;
-}
-
-#development {
-	background-color: white;
-	color: $yellow;
-
-	.b1 {
-	  font-size: 5vw;
-	  line-height: 2.8125;
-	  margin-bottom: -1.0625em;
-	}
-
-	h5 {
-		color: black;
-	}
-}
-
-#about {
-	// background-color: $grey2;
-}
-
 // property
 
 .container {
@@ -498,8 +449,8 @@ p {
 	background-color: $grey4;
 	background-position: center;
 	background-size: cover;
-	padding-left: 2%;
-	padding-top: .75%;
+	padding: 1.25em;
+	padding-top: 0.25em;
 	min-height: 24em;
 
 	@include media($break1) {
@@ -522,18 +473,14 @@ p {
 
 .proplinks {
   font-family: $fontmd;
-  font-size: 1em;
-  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8em;
+  background-color: $yellowtrans;
   position: absolute;
-  margin-top: 18.75em;
-  padding: 0.375em 0.375em 0.15em;
-
-	h1:hover {
-		color: $yellow;
-	}
+  margin-top: 24.75em;
+      padding: 0.5em 0.5em 0.2em 0.5em;
 
 	@include media($break1) {
-		margin-top: 27.8125em;
+		margin-top: 34.8125em;
 		// transition: margin-top 0.25s ease-out;
 	}
 
@@ -547,6 +494,7 @@ p {
 	background-size: cover;
 
 	h1 {
+		font-family: $fontsm;
 		color: $grey3;
 	}
 }
@@ -554,23 +502,19 @@ p {
 // show page
 
 .prophero{
-	margin-top: 17.9375em;
+	@include outer-container();
+	@include span-columns(12);
+}
 
-	.icon {
-		font-family: $icon;
-		color: $yellow;
-		position: relative;
-    margin-bottom: -3.625em;
-    z-index: 100;
-    font-size: 5em;
-    right: -76.375em;
-    top: 3.75em;
-
-    @include media($break1) {
-    	right: -52.5em;
-    }
-	}
-
+.icon {
+	font-family: $icon;
+	color: $yellow;
+	position: relative;
+  margin-bottom: -3.625em;
+  z-index: 100;
+  font-size: 3.5em;
+  left: 0.2em;
+  top: 1.1em;
 }
 
 .propinfo {
@@ -638,6 +582,15 @@ p {
 
 // Edit Form
 
+input {
+	width: 100%;
+  height: 6vh;
+  border: none;
+  margin-bottom: 2px;
+  padding-left: 1em;
+  font-family: $fontmd;
+}
+
 .formcontainer {
 	@include outer-container();
 	@include span-columns(12);
@@ -654,17 +607,22 @@ p {
 	min-width: 100%;
 	border-top: 1px white solid;
 	padding-top: 0.9375em;
-	border-bottom: 1px white solid;
+	padding-bottom: 6.9375em;
 
 	input {
+		@include span-columns(12);
+		font-family: $fontsm;
+		padding: 1.75em;
+		margin-top: 0.875em;
 		margin-bottom: 1.875em;
 		border-radius: 0em;
 		height: 2.5em;
 	}
 
 	input[type=submit] {
+		border: none;
 		font-family: $fontmd;
-		height: 2.5em;
+		padding-top: 1.25em;
 		background-color: $yellow;
 		margin-top: 1.125em;
 		@include span-columns(3);
@@ -672,13 +630,22 @@ p {
 	}
 
 	input[type=submit]:hover {
-		color: $grey;
+		color: $grey3;
 		transition: .5s;
+	}
+
+	input[type=file] {
+		padding-left: 0em;
+	}
+
+	input[type=textarea] {
+		font-family: $fontsm;
+		min-height: 2.5em; 
 	}
 
 	button {
 		@include span-columns(1);
-		height: 2.5em;
+		// height: 3.5em;
 		background-color: $red;
 		margin-top: 1.125em;
 		margin-left: 1.875em;
@@ -698,6 +665,18 @@ p {
 		color: white;
 	}
 
+}
+
+.photobox {
+	@include span-columns(12);
+	display: flex;
+}
+
+.photo {
+	display: flex-item;
+	background-color: $grey4;
+	padding: 1em;
+	margin: .25em;
 }
 
 .warning {
@@ -903,7 +882,7 @@ p {
 
 
 	.y1 {
-		border-color: white;
+		color: black;
 	}
 
 	h3 {
@@ -912,14 +891,14 @@ p {
 	}
 
 	a:hover {
-		color: $grey2;
+		color: $grey3;
 	}
 
 	.contactlft {
 		@include span-columns(6);
 		text-align: left;
 		padding-bottom: 4.875em;
-		border-bottom: 1px solid white;
+		border-bottom: 1px solid black;
 
 		@include media($break1){
 			padding-bottom: 2.8125em;
@@ -933,7 +912,7 @@ p {
 		background-repeat: none;
 		line-height: 0;
 		height: 20.3125em;
-		margin-top: 2.625em;
+		margin-top: 3em;
 	}
 
 	img {
@@ -1024,10 +1003,11 @@ p {
 	@include span-columns(12);
 	min-height: 34.375em;
 	min-width: 100%;
-  margin-bottom: 3.125em;
+	margin-bottom: 3.1875em;
+  
 
   @include media($break1) {
-  	margin-bottom: -12.5em;
+ 		margin-bottom: -8em;
   }
 
   img {
