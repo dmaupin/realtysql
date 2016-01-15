@@ -4,31 +4,38 @@
 
 <div class="form">
 
-<!-- flash msg goes here -->
+	<!-- flash msg goes here -->
 
-<%= form_for @prop do |p| %>
-	
-	Name: <%= p.text_field :title %>
-	Address <%= p.text_field :street %>
-	City, State, Zip <%= p.text_field :city %>
-	Price: <%= p.text_field :price %>
-	Square Footage: <%= p.number_field :sqft %>
-	Description: <%= p.text_area :description %><br>
-	MLS url: <%= p.text_field :mls  %>
-	Beds: <%= p.number_field :beds %>
-	Baths <%= p.number_field :baths %>
-		<%= p.fields_for :pics do |i| %>
-			<%= i.label :item, "Photos" %><br/>
-			<%= i.file_field :item, name: "pics[item][]" %><br/>
-			<label>Delete Photo<%= i.check_box :remove_item %></label>
-		<%	 end %>
-	<%= p.submit "Update" %>
+	<%= form_for @prop do |p| %>
+		
+		Name:<br>
+		<%= p.text_field :title %><br>
+		Address: <br>
+		<%= p.text_field :street %><br>
+		Price:<br>
+		<%= p.text_field :price %><br>
+		Square Footage:<br>
+		<%= p.number_field :sqft %><br>
+		Description:<br>
+		<%= p.text_area :description %><br>
+		Beds:<br> <%= p.number_field :beds %><br>
+		Baths:<br>  <%= p.text_field :baths %><br>
+		<div class="photobox">
+			<%= p.fields_for :pics do |i| %>
+			<div class="photo">
+				<%= i.label :item, "Photo:" %>
+				<%= i.file_field :item, name: "pics[item][]" %><br/>
+				Delete: <%= i.check_box :remove_item %>
+				</div>
+			<% end %>
+		</div>
+		<%= p.submit "Update" %>
 
 	<% end %>
 
-<button><%= link_to "Delete", :prop, method: :delete, data: {confirm: "Are you sure? This action cannot be undone."} %></button>
+	<button><%= link_to "Delete", :prop, method: :delete, data: {confirm: "Are you sure? This action cannot be undone."} %></button>
 
-<button><%= link_to "Cancel", prop_path %></button>
+	<button><%= link_to "Cancel", prop_path %></button>
 
 </div>
 

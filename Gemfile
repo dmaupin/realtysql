@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro'
 
+gem 'normalize-rails', '~> 3.0', '>= 3.0.3'
+
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
