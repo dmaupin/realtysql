@@ -74,18 +74,38 @@ $(document).ready(function() {
 
 // Toggle Menu
 
-$(document).ready(function() {
-  var menuToggle = $('#js-mobile-menu').unbind();
-  $('#js-navigation-menu').removeClass("show");
-
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-navigation-menu').slideToggle(function(){
-      if($('#js-navigation-menu').is(':hidden')) {
-        $('#js-navigation-menu').removeAttr('style');
-      }
-    });
-  });
+$(document).ready(function(){
+  
+  var menu = $(".navbar");
+  var hamburger = $(".hamburger");
+  var line = $(".line");
+  var menuOpen;
+  
+  function openMenu(){
+    menu.css("top", "0px");
+    line.css("background", "#D9D9D9");
+    menuOpen = true;
+  }
+  
+  function closeMenu(){
+    menu.css("top", "-180px");
+    line.css("background", "#FDDE2C");
+    menuOpen = false;
+  }
+  
+  function toggleMenu(){
+    if (menuOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+  
+  hamburger.on({
+    click: function(){
+      toggleMenu();
+    }
+  })
 });
 
 // Slider

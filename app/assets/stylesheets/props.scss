@@ -254,6 +254,36 @@ p {
 
 // nav
 
+.hamburger {
+	display: none;
+  position: absolute;
+  top: 15px;
+  left: 125px;
+  z-index: 202020;
+  cursor: pointer;
+
+  @include media($break2) {
+  	display: inherit;
+  }
+}
+
+.line {
+  width: 50px;
+  height: 6px;
+  background: $yellow;
+  margin-bottom: 5px;
+}
+
+.nav--open {
+  top: 0;
+}
+
+.menu {
+	@include outer-container();
+	@include span-columns(6);
+	background-color: white;
+}
+
 .navbar {
 	width: 100%;
 	max-width: 1280px;
@@ -281,11 +311,12 @@ p {
 		transition: max-width 0.25s ease-out;
 	}
 
-	@include media($break2) { // !!!!!
-		max-width: 375px;
-		transition: max-width 0.25s ease-out;
-		min-height: 180px;
-		position: fixed;
+	@include media($break2) { // Mobile
+	  max-width: 375px;
+	  height: 180px;
+	  position: fixed;
+	  top: -200px;
+	  transition: top .1s;
 	}
 
 	ul {
@@ -298,7 +329,7 @@ p {
 		list-style-type: none;
 
 		@include media ($break2) {
-			top: 2.5em;
+			margin-top: 3.5em;
 		}
 
 		li {
@@ -374,6 +405,8 @@ p {
  	@include media($break2) {
   	min-height: 11.25em;
   	padding-top: 7.75em;
+  	background-position: center -41px;
+    background-size: 393px;
   	transition: min-height 0.25s ease-out;
  	}	
 
@@ -462,7 +495,7 @@ p {
 	}
 
 	@include media($break2) {
-		min-height: 20em;
+		min-height: 15em;
 		padding-left: 1.4em;
 	}
 }
@@ -485,7 +518,7 @@ p {
 	}
 
 	@include media($break2) {
-		margin-top: 11.875em;
+		margin-top: 13.5em;
 	}
 }
 
