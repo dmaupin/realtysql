@@ -113,3 +113,9 @@ $(document).ready(function(){
 jQuery(document).ready(function($) {
   $('.my-slider').unslider();
 });
+
+// Jquery animations
+
+$(window).scroll(function(){
+    $(".logo").css("opacity", 1 - $(window).scrollTop() / 200);
+  });
