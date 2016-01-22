@@ -310,12 +310,37 @@ p {
 	background-color: white;
 }
 
-.navbar {
+.navback {
 	width: 100%;
 	max-width: 1280px;
 	height: 3.4375em;
 	top: 0em;
 	background-color: white;
+	opacity: 0;
+	position: fixed;
+	z-index: 100;
+	transition: max-width 0.25s ease-out;
+
+	@include media($break1) {
+		max-width: 900px;
+		transition: max-width 0.25s ease-out;
+	}
+
+	@include media($break2) { // Mobile
+	  max-width: 375px;
+	  height: 180px;
+	  position: fixed;
+	  top: -200px;
+	  transition: top .1s;
+	}
+
+}
+
+.navbar {
+	width: 100%;
+	max-width: 1280px;
+	height: 3.4375em;
+	top: 0em;
 	position: fixed;
 	z-index: 10000;
 	transition: max-width 0.25s ease-out;
@@ -343,6 +368,7 @@ p {
 	  position: fixed;
 	  top: -200px;
 	  transition: top .1s;
+	  background-color: white;
 	}
 
 	ul {
@@ -425,7 +451,8 @@ p {
  .logo{
 		width: 70%;
 		margin-left: 15%; 
-		margin-top: 15.5%;
+		top: 50%;
+		transform: translateY(80%);
 
 		@include media($break2) {
 			display: none;
@@ -817,6 +844,38 @@ input {
 		.b1 {
 			font-size: 2em;
 		}
+	}
+}
+
+.icons {
+	@include outer-container();
+	min-width: 100%;
+	display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  padding-bottom: 6.25em;
+
+  @include media($break2) {
+  	flex-direction: column;
+  	padding: 0em;
+  }
+	
+	.iconsitem {
+		@include outer-container();
+		@include span-columns(3);
+		padding: 10px;
+
+		@include media($break2) {
+			@include outer-container();
+			@include span-columns(6);
+			padding: 50px;
+		}
+	}
+
+	h3 {
+		color: $grey3;
 	}
 }
 
