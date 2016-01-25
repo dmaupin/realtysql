@@ -121,7 +121,7 @@ $(window).scroll(function(){
   });
 
 $(window).scroll(function(){
-    $(".navback").css("opacity", 0 + $(window).scrollTop() / 400);
+    $(".navback").css("opacity", 0.1 + $(window).scrollTop() / 400);
   });
 
 // $(window).scroll(function(){
