@@ -220,7 +220,7 @@ p {
 .b1 {
 	font-family: $fontmd;
 	font-size: 2.75rem;
-	text-align: left;
+	// text-align: left;
 	// text-transform: uppercase;
 	line-height: 1;
 
@@ -316,7 +316,7 @@ p {
 	height: 3.4375em;
 	top: 0em;
 	background-color: white;
-	opacity: 0;
+	opacity: 0.1;
 	position: fixed;
 	z-index: 100;
 	transition: max-width 0.25s ease-out;
@@ -612,6 +612,10 @@ p {
 		margin-right: 0em;
 		margin-top: 1.875em;
 
+		@include media ($break2) {
+			@include span-columns(6);
+		}
+
 	}
 
 	.propinforight {
@@ -620,6 +624,10 @@ p {
 		min-width: 50%;
 		margin-right: 0em;
 		margin-top: 1.875em;
+
+		@include media ($break2) {
+			@include span-columns(6);
+		}
 
 	}
 
@@ -831,6 +839,7 @@ input {
 	@include span-columns(7);
 	float: right;
 	border-bottom: 1px solid black;
+	text-align: right;
 
 	@include media($break1) {
 		@include span-columns(6);
@@ -843,8 +852,11 @@ input {
 
 		.b1 {
 			font-size: 2em;
+			text-align: right;
 		}
 	}
+
+
 }
 
 .icons {
@@ -865,7 +877,7 @@ input {
 	.iconsitem {
 		@include outer-container();
 		@include span-columns(3);
-		padding: 10px;
+		padding: 1em;
 
 		@include media($break2) {
 			@include outer-container();
@@ -877,6 +889,13 @@ input {
 	h3 {
 		color: $grey3;
 	}
+
+  p {
+	  -webkit-column-count: 1; /* Chrome, Safari, Opera */
+	  -moz-column-count: 1; /* Firefox */
+	  column-count: 1;
+	  text-align: center;
+  }
 }
 
 // development
@@ -972,7 +991,6 @@ input {
 	padding: 5em;
 	padding-bottom: 7.25em;
 
-
 	.y1 {
 		color: black;
 	}
@@ -995,6 +1013,12 @@ input {
 		@include media($break1){
 			padding-bottom: 2.8125em;
 		}
+
+	@include media($break2) {
+		@include outer-container();
+		@include span-columns(6);
+	}
+
 	}
 
 	.contactrt {
@@ -1011,7 +1035,6 @@ input {
 		max-width: 100%;
 		opacity: 0;
 	}
-
 }
 
 // footer
@@ -1081,6 +1104,8 @@ input {
 	padding:0;
 	@include span-columns(12);
 	@include omega();
+
+	img { display: block; width: 100%; height: auto; }
 }
 
 .unslider-wrap{
@@ -1141,6 +1166,15 @@ input {
 	margin-top: -7em;
 	font-size: 4em;
 	color: white;
+
+	@include media($break1) {
+		margin-top: -5.5em;
+	}
+
+	@include media($break2) {
+		margin-top: -2.55em;
+		font-size: 3em;
+	}
 }
 
 .unslider-arrow:hover {
@@ -1169,6 +1203,15 @@ input {
 
 .dev .unslider-arrow {
 	margin-top: -6em;
+
+	@include media($break1) {
+		margin-top: -4em;
+	}
+
+	@include media($break2) {
+		margin-top: -2.55em;
+		font-size: 3em;
+	}
 }
 
 .unslider-nav ol li {
@@ -1214,6 +1257,10 @@ input {
  		margin-bottom: -8em;
   }
 
+  @include media($break2) {
+  	margin-bottom: -24em;
+  }
+
   img {
   	max-width: 100%;
   	position: absolute;
@@ -1222,6 +1269,11 @@ input {
   	@include media($break1) {
   		@include span-columns(6);
   		max-width: 56.1875em;
+  	}
+
+    @include media($break2) {
+  		@include span-columns(6);
+  		max-width: 23.5em;
   	}
   }
 }
