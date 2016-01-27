@@ -58,8 +58,8 @@ $grey3: #717171;
 $grey4:#F6F6F6;
 $red: #FF000D;
 
-$break1: new-breakpoint(max-width 1279px 6);
-$break2: new-breakpoint(max-width 899px 6);
+$break1: new-breakpoint(max-width 1080px 6);
+$break2: new-breakpoint(max-width 600px 6);
 
 $fontsm: 'LubalinGraphStd-Book'; // Book
 $fontmd: 'LubalinGraphStd-Demi'; // Demi
@@ -81,12 +81,12 @@ body {
   transition: max-width 0.25s ease-out;
 
   @include media($break1) {
-  	max-width: 900px;
+  	// max-width: 900px;
   	transition: max-width 0.25s ease-out;
   }
 
    @include media($break2) {
-  	max-width: 375px;
+  	// max-width: 375px;
   	transition: max-width 0.25s ease-out;
   }
 }
@@ -322,12 +322,10 @@ p {
 	transition: max-width 0.25s ease-out;
 
 	@include media($break1) {
-		max-width: 900px;
 		transition: max-width 0.25s ease-out;
 	}
 
-	@include media($break2) { // Mobile
-	  max-width: 375px;
+	@include media($break2) {
 	  height: 180px;
 	  position: fixed;
 	  top: -200px;
@@ -345,25 +343,24 @@ p {
 	z-index: 10000;
 	transition: max-width 0.25s ease-out;
 
-	h4 {
-			display: none;
-			cursor: pointer;
+	// h4 {
+	// 		display: none;
+	// 		cursor: pointer;
 			
-			@include media($break2) {
-				display: inherit;
-				font-size: 1.1875em;
-				top: -37px;
-	    	margin-left: 0.75em;
-  		}
-	}
+	// 		@include media($break2) {
+	// 			display: inherit;
+	// 			font-size: 1.1875em;
+	// 			top: -37px;
+	//     	margin-left: 0.75em;
+ //  		}
+	// }
 
 	@include media($break1) {
-		max-width: 900px;
+		// max-width: 900px;
 		transition: max-width 0.25s ease-out;
 	}
 
 	@include media($break2) { // Mobile
-	  max-width: 375px;
 	  height: 180px;
 	  position: fixed;
 	  top: -200px;
@@ -381,7 +378,7 @@ p {
 		list-style-type: none;
 
 		@include media ($break2) {
-			margin-top: 3.5em;
+			margin-top: 4.5em;
 		}
 
 		li {
@@ -410,7 +407,7 @@ p {
 	}
 
 	.bug {
-    right: 0.625em;
+    right: 1%;
     top: 0.625em;
     position: fixed;
     width: 12.5625em;
@@ -434,28 +431,31 @@ p {
 	min-width: 100%;
 	position: inherit;
 	min-height: 36.25em;
+	padding-top: 11.25em;
 
 	@include media($break1) {
   	min-height: 26.25em;
   	transition: min-height 0.25s ease-out;
+  	padding-top: 9.25em;
  	}	
 
  	@include media($break2) {
-  	min-height: 11.25em;
+ 		@include span-columns(6);
+  	min-height: 20.25em;
   	padding-top: 7.75em;
-  	background-position: center -41px;
-    background-size: 393px;
+  	background-position: center -141px;
+    background-size: conatin;
   	transition: min-height 0.25s ease-out;
  	}	
 
  .logo{
 		width: 70%;
-		margin-left: 15%; 
-		top: 50%;
-		transform: translateY(80%);
+		margin-left: 15%;
 
 		@include media($break2) {
-			display: none;
+			width: 60%;
+			margin-left: 20%;
+			transition: width 0.25s ease-out;
 		}
 	}
 
@@ -523,7 +523,7 @@ p {
 	}
 
 	@include media($break2) {
-		min-height: 15em;
+		min-height: 20.25em;
 		padding-left: 1.4em;
 	}
 }
@@ -546,7 +546,7 @@ p {
 	}
 
 	@include media($break2) {
-		margin-top: 13.5em;
+		margin-top: 20em;
 	}
 }
 
@@ -801,13 +801,8 @@ input {
 		@include span-columns(6);
 		float: none;
     display: block;
-    margin-right: 0%;
-    width: 50%;
-    margin-left: 12.0625em;
-	}
-
-	@include media($break2) {
-		margin-left: 2.75em;
+    margin-right: auto;
+    margin-left: auto;
 	}
 
 	.portrait {
@@ -818,18 +813,13 @@ input {
 		background-image: url(doug.png);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-left: 1.5625em;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 2.5em;
-
-    @include media($break1) {
-    	margin-left: 0em;
-    	margin-top: 0em;
-    }
 
 		@include media($break2) {
 			width: 12.5em;
 			height: 12.5em;
-			margin-left: 0em;
 		}
 	}
 }
@@ -860,29 +850,32 @@ input {
 }
 
 .icons {
-	@include outer-container();
+	// @include outer-container();
 	min-width: 100%;
 	display: flex;
   flex-direction: row;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 2em;
   margin-bottom: 4em;
-  padding-bottom: 6.25em;
+
+   @include media($break1) {
+  	padding: 0em;
+  }
 
   @include media($break2) {
   	flex-direction: column;
-  	padding: 0em;
+  	padding: 1em;
   }
 	
 	.iconsitem {
-		@include outer-container();
+		// @include outer-container();
 		@include span-columns(3);
 		padding: 1em;
+		order: 1;
 
 		@include media($break2) {
-			@include outer-container();
 			@include span-columns(6);
-			padding: 50px;
 		}
 	}
 
@@ -891,10 +884,9 @@ input {
 	}
 
   p {
-	  -webkit-column-count: 1; /* Chrome, Safari, Opera */
-	  -moz-column-count: 1; /* Firefox */
+	  -webkit-column-count: 1; // Chrome, Safari, Opera
+	  -moz-column-count: 1; // Firefox
 	  column-count: 1;
-	  text-align: center;
   }
 }
 
@@ -947,7 +939,7 @@ input {
 	.b1 {
 
 	@include media($break2) {
-			font-size: 2.5em;
+			font-size: 2em;
 			padding-top: 0em;
 	}
 
@@ -1004,6 +996,12 @@ input {
 		color: $grey3;
 	}
 
+@include media($break2) {
+	a {
+			min-width: 100%;
+	}
+}
+
 	.contactlft {
 		@include span-columns(6);
 		text-align: left;
@@ -1017,6 +1015,7 @@ input {
 	@include media($break2) {
 		@include outer-container();
 		@include span-columns(6);
+		font-size: .75em;
 	}
 
 	}
@@ -1032,7 +1031,7 @@ input {
 	}
 
 	img {
-		max-width: 100%;
+		width: 100%;
 		opacity: 0;
 	}
 }
@@ -1268,12 +1267,12 @@ input {
 
   	@include media($break1) {
   		@include span-columns(6);
-  		max-width: 56.1875em;
+  		// max-width: 56.1875em;
   	}
 
     @include media($break2) {
   		@include span-columns(6);
-  		max-width: 23.5em;
+  		// max-width: 23.5em;
   	}
   }
 }
