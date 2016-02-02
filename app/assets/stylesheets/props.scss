@@ -271,7 +271,7 @@ p {
 
 	.hamburger {
 		display: none;
-	  position: absolute;
+	  position: fixed;
 	  z-index: 202020;
 	  cursor: pointer;
 	  top: 13px;
@@ -343,6 +343,7 @@ p {
 	z-index: 10000;
 	transition: max-width 0.25s ease-out;
 
+
 	// h4 {
 	// 		display: none;
 	// 		cursor: pointer;
@@ -404,6 +405,14 @@ p {
 			}
 		}
 
+		span {
+			color: $yellow;
+			font-family: $fontsm;
+		}
+
+		li:hover span {
+		 	border-bottom: none;
+		}
 	}
 
 	.bug {
@@ -850,9 +859,10 @@ input {
 }
 
 .icons {
-	// @include outer-container();
+	@include outer-container();
 	min-width: 100%;
 	display: flex;
+	display: -webkit-flexbox;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -860,24 +870,32 @@ input {
   margin-bottom: 4em;
 
    @include media($break1) {
+   	margin-left: auto;
+   	margin-right: auto;
   	padding: 0em;
   }
 
   @include media($break2) {
-  	flex-direction: column;
   	padding: 1em;
   }
 	
 	.iconsitem {
-		// @include outer-container();
-		@include span-columns(3);
-		padding: 1em;
-		order: 1;
+		width: 25%;
+		padding: 0.5em;
+
+		@include media($break1) {
+
+			width: 50%;
+			padding: 2em;
+		}
 
 		@include media($break2) {
-			@include span-columns(6);
+			width: 100%;
+			padding: 3em; 
 		}
 	}
+
+	li {list-style-type: none;}
 
 	h3 {
 		color: $grey3;
@@ -887,6 +905,7 @@ input {
 	  -webkit-column-count: 1; // Chrome, Safari, Opera
 	  -moz-column-count: 1; // Firefox
 	  column-count: 1;
+	  text-align: left;
   }
 }
 
@@ -1044,11 +1063,15 @@ input {
 	max-height: 7.25em;
 	min-height: 7.25em;
 	background-color: white;
-	color: white;
+	// color: white;
 	font-family: $fontsm;
 	font-size: 0.875em;
 	padding: 1.25em;
 	text-align: center;
+
+	strong {color: black;}
+
+	.user_nav {color: $grey3;}
 
 	h3 {
 		font-family: $fontsm;

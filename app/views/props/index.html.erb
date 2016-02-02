@@ -13,6 +13,11 @@
 		<li id="goingtoabout">Info</li>
 		<li id="gotodev">Development</li>
 		<li id="gotocontact">Contact</li>
+		<% if user_signed_in? %>
+		<li><%= link_to "Add", new_prop_path %></li>
+		<% end %>
+		<li class="notice"><span><%= notice %></span></li>
+       	<li class="alert"><span><%= alert %></span></li>
 	</ul>
 	<div class="bug"><img src="<%= asset_path('LogoBug_3a.svg') %>" alt="Maupin Realty"></div>
 </div>
