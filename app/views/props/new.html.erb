@@ -1,3 +1,5 @@
+<% if !current_user.nil? %>
+
 <div class="formcontainer">
 
 <h1>Add Property</h1>
@@ -37,3 +39,9 @@
 </div>
 
 </div>
+
+<% else %>
+
+	<% redirect_to props_path %>
+
+<% end %>
