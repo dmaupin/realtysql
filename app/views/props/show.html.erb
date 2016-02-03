@@ -54,16 +54,19 @@
 
 <!-- Map -->
 
-<div id="googlemaps"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&zoom=15&style=feature:all|saturation:-100|gamma:0.7&markers=#{@prop.latitude}%2C#{@prop.longitude}" %></div>
+<div id="googlemaps">
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x300&scale=2&zoom=15&style=feature:all|saturation:-100|gamma:0.7&markers=#{@prop.latitude}%2C#{@prop.longitude}", id: "largemap" %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=640x640&scale=2&zoom=15&style=feature:all|saturation:-100|gamma:0.7&markers=#{@prop.latitude}%2C#{@prop.longitude}", id: "smallmap" %>
+</div>
 
 <!-- Footer -->
 
 <div class="footer">
 	 <ul class="footlinks">
-		<li id="goingtolistings"><a href="#listings">Listings</a></li> | 
-		<li id="goingtoabout"><a href="#about">Info</a></li> | 
-		<li id="gotodev"><a href="#dev">Development</a></li> | 
-		<li id="gotocontact"><a href="#contact">Contact</a></li>
+		<li id="goingtolistings"><%= link_to "Listings", props_path %></li> | 
+		<li id="goingtoabout"><%= link_to "Info", props_path %></li> | 
+		<li id="gotodev"><%= link_to "Development", props_path %></li> | 
+		<li ><%= link_to "Contact", props_path %></li>
 	</ul>
 	
 		<div id="user_nav">
