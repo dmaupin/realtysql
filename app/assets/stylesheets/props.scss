@@ -1060,8 +1060,8 @@ input {
 .footer {
 	@include span-columns(12);
 	@include omega();	
-	max-height: 7.25em;
-	min-height: 7.25em;
+	// max-height: 7.25em;
+	min-height: 9.25em;
 	background-color: white;
 	// color: white;
 	font-family: $fontsm;
@@ -1270,7 +1270,7 @@ input {
 #googlemaps { 
 	@include outer-container();
 	@include span-columns(12);
-	min-height: 34.375em;
+	min-height: 32.375em;
 	min-width: 100%;
 	margin-bottom: 3.1875em;
   
