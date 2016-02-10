@@ -602,6 +602,10 @@ p {
   	column-count: 1;
 	}
 
+	button {
+		background-color: $yellow;
+	}
+
 	@include media($break2) {
 		padding-top: 2.25em;
 		padding-bottom: 2.25em;
@@ -616,6 +620,14 @@ p {
 		@include media ($break2) {
 			@include span-columns(6);
 		}
+
+	#bed {
+		@include span-columns(3);
+	}
+	
+	#bath {
+		@include span-columns(3);
+	}
 
 	}
 
@@ -645,6 +657,11 @@ p {
 	margin-top: 1.875em;
 	padding-top: 1.5625em;
   min-width: 100%;
+
+  .warning {
+  	background-color: red;
+  	color: white;
+  }
 }
 
 // Forms
@@ -685,7 +702,7 @@ input {
 		margin-top: 0.875em;
 		margin-bottom: 1.875em;
 		border-radius: 0em;
-		height: 2.5em;
+		height: 5.5em;
 	}
 
 	input[type=submit] {
@@ -696,6 +713,7 @@ input {
 		margin-top: 1.125em;
 		@include span-columns(3);
 		cursor: pointer;
+		height: 3.2em;
 	}
 
 	input[type=submit]:hover {
@@ -709,7 +727,7 @@ input {
 
 	input[type=textarea] {
 		font-family: $fontsm;
-		min-height: 2.5em; 
+		min-height: 8.5em; 
 	}
 
 	button {
@@ -748,15 +766,15 @@ input {
 	margin: .25em;
 }
 
-.warning {
-	color: white;
-	background-color: $red;
-	float: right;
-}
+// .warning button {
+// 	color: white;
+// 	background-color: $red;
+// 	float: right;
+// }
 
-.warning:hover a {
-	color: $grey2;
-}
+// .warning:hover a {
+// 	color: $grey2;
+// }
 
 // bio
 
@@ -851,15 +869,16 @@ input {
 }
 
 .icons {
-	@include outer-container();
-	min-width: 100%;
-	display: flex;
-	display: -webkit-flexbox;
+  @include outer-container();
+  min-width: 100%;
+  display: flex;
+  display: -webkit-flexbox;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2em;
   margin-bottom: 4em;
+  padding: 0em;
 
    @include media($break1) {
    	margin-left: auto;
