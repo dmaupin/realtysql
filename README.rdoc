@@ -11,4 +11,4 @@ Built with :
 • Geocode
 • Carrierwave
 
-Visit <a href="http://www.maupinrealtors.com/" target="blank">maupinrealtors.com</a> for a demo
+Visit maupinrealtors.com[http://www.maupinrealtors.com/] for a demo
