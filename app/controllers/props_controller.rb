@@ -1,7 +1,7 @@
 class PropsController < ApplicationController
 
 	def index
-		@props = Prop.all
+		@props = Prop.all.order(created_at: :asc)
 	end
 
 	def show
