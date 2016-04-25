@@ -766,9 +766,9 @@ input {
 	margin: .25em;
 }
 
-// Mailing list
+// Mailing list for Mailchip signup
 
-.mail {
+.mailing {
 	@include outer-container();
 	@include span-columns(12);	
 	min-width: 100%;
