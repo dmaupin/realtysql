@@ -766,6 +766,122 @@ input {
 	margin: .25em;
 }
 
+// Casba Estates Banner "Ad"
+
+.banner {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  height: 35em;
+  background-color: #AECABC;
+}
+
+// Hero animation
+
+@include keyframes(fade-out) {
+  33%{
+    opacity: 1
+  }
+  66%{
+   opacity: 0
+  }
+}
+
+// Hero
+
+ul.banner-slideshow{
+  list-style: none;
+  display: inline;
+  background-color: #AECABC;
+
+  // Slideshow image one
+
+  li{  
+    height: 35em;
+    width: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-color: #AECABC;
+    z-index: 0;
+    opacity: 0;
+    margin-top: -1.125em;
+    background-image: url(slide1.png);
+    background-size: cover;
+    @include animation(fade-out 22.5s infinite both);
+  }
+  
+  // Slideshow image two
+
+  li:nth-child(2){
+    background-image: url(slide2.png);    
+    @include animation-delay(7.5s);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+  }
+
+  // Slideshow image three
+
+  li:nth-child(3){
+    background-image: url(slide3.png);
+    @include animation-delay(15s);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+  }
+}
+
+.title-vert {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  z-index: 4;
+  padding: 0 5%;
+  left: -20px;
+  text-align: center;
+  color: white;
+
+  h1 {
+    font-weight: 900;
+    margin-bottom: 5px;
+    line-height: 2.25em;
+    text-align: center;
+
+    @include media($break2) {
+      line-height: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    font-family: $fontmd;
+    font-size: 3.75rem;
+    line-height: 0;
+    text-align: center;
+    color: white;
+    @include media($break2){
+      line-height: 1;
+      margin-bottom: -0.1em;
+    }
+  }
+
+  p {
+    text-align: center;
+    color: white;
+    column-count: 1;
+  }
+
+  a {
+    font-family: $fontmd;
+    background-color: white;
+    padding: 1em 1em .95em 1em;
+    border-radius: 2px;
+  }
+
+}
+
 // Mailing list for Mailchip signup
 
 .mailing {
