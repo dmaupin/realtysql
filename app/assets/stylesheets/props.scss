@@ -841,6 +841,7 @@ ul.banner-slideshow{
   padding: 0 5%;
   left: -20px;
   text-align: center;
+  color: white;
 
   h1 {
     font-weight: 900;
@@ -855,14 +856,30 @@ ul.banner-slideshow{
   }
 
   h2 {
+    font-family: $fontmd;
+    font-size: 3.75rem;
+    line-height: 0;
     text-align: center;
     color: white;
+    @include media($break2){
+      line-height: 1;
+      margin-bottom: -0.1em;
+    }
   }
 
   p {
     text-align: center;
+    color: white;
+    column-count: 1;
   }
-  
+
+  a {
+    font-family: $fontmd;
+    background-color: white;
+    padding: 1em 1em .95em 1em;
+    border-radius: 2px;
+  }
+
 }
 
 // Mailing list for Mailchip signup
