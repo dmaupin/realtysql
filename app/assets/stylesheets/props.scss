@@ -98,10 +98,10 @@ a {
 	color: black;	
 }
 
-a:hover {
-	color: $grey3;
-	transition: color .5s;
-}
+// a:hover {
+// 	color: $grey3;
+// 	transition: color .5s;
+// }
 
 a:active {
 	color: $grey2;
@@ -124,10 +124,10 @@ button {
   padding: 1em 1em 2em 1em;
 }
 
-button:hover {
-	color: $grey3;
-	transition: .2s;
-}
+// button:hover {
+// 	color: $grey3;
+// 	transition: .2s;
+// }
 
 // TYPOGRAPHY
 
@@ -534,7 +534,7 @@ p {
   background-color: $yellowtrans;
   position: absolute;
   margin-top: 24.75em;
-      padding: 0.5em 0.5em 0.2em 0.5em;
+  padding: 0.5em 0.5em 0.2em 0.5em;
 
 	@include media($break1) {
 		margin-top: 34.8125em;
@@ -644,9 +644,9 @@ p {
 
 	}
 
-	a:hover {
-		color: $grey3;
-	}
+	// a:hover {
+	// 	color: $grey3;
+	// }
 
 }
 
@@ -898,9 +898,15 @@ ul.banner-slideshow{
 .mailing {
   min-width: 100%;
   background-color: $yellow;
-  padding: 3em;
-  padding-bottom: 5em;
   margin-left: auto;
+  min-height: 25vh;
+  padding: 7.25em;
+  padding-top: 7.25em;
+  padding-bottom: 7.25em;
+
+  p {
+    column-count: 1;
+  }
 
   .mailform {
       width: 100%;
@@ -917,7 +923,7 @@ ul.banner-slideshow{
     input {
       font-family: $fontmd;
       background-color: $yellow;
-      height: 3em;
+      height: 4em;
       padding: .5em;
       width: 90%;
       border: none;
@@ -935,7 +941,7 @@ ul.banner-slideshow{
     textarea.email:focus,
     button.email:focus {
         outline: none;
-        border-bottom: 2px #898989 solid;
+        border-bottom: 2px black solid;
         transition: border-bottom .25s;
       }
 
@@ -947,7 +953,7 @@ ul.banner-slideshow{
       }
 
     .label-style {
-      left: 3.5em;
+      left: 7.5em;
       margin-top: 15px;
       color: white;
       text-align: left;
@@ -956,15 +962,20 @@ ul.banner-slideshow{
       transition: 0.2s ease all; 
       -moz-transition: 0.2s ease all; 
       -webkit-transition:0.2s ease all;
+      font-family: $fontsm;
     }
 
     .is-focused {
       margin-top: -5px;
-      color: #898989;
+      color: black;
       font-size: .5em;
-      left: 5.5em;
+      left: 13.25em;
     }
     
+    }
+
+    .button {
+      height: 4em;
     }
 
   }

@@ -45,7 +45,7 @@
 			<p><%= @prop.description %></p>
 		</div>
 		<div class="border">
-		<button type=""> <%= link_to "All Listings", props_path %></button>
+		<button type="" class="shadow"> <%= link_to "All Listings", props_path %></button>
 		<% if user_signed_in? %>
 		<button type="" class="warning"> <%= link_to "Edit", edit_prop_path, class: "warning" %></button>
 		<% end %>
