@@ -359,10 +359,13 @@ p {
 	ul {
 		font-family: $fontmd;
 		font-size: .85em;
-		left: -1.875em;
+		margin-left: -4em;
 		top: 0.5em;
-		position:absolute;
-		cursor: pointer;
+    display: table;
+    border-spacing: 2em 0em;
+    padding-top: -1em;
+		// position:absolute;
+		// cursor: pointer;
 		list-style-type: none;
 
 		@include media ($break2) {
@@ -370,9 +373,10 @@ p {
 		}
 
 		li {
-			display: inline;
+      position: relative; 
+			display: table-cell;
 			color: black;
-			padding: 0.125em;
+			padding-top: 0.5em;
 			margin-right: 1.5625em;
 
 			@include media($break2) {
@@ -381,25 +385,22 @@ p {
 			}
 		}
 
-		li:hover {
-			color: black;
-			border-bottom: $yellow 2px solid;
-
-			@include media ($break2) {
-				border-bottom: none;
-				color: $grey3;
-				transition: color 0.25s;
-			}
-		}
-
-		span {
-			color: $yellow;
-			font-family: $fontsm;
-		}
-
-		li:hover span {
-		 	border-bottom: none;
-		}
+    a:after {    
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: $yellow;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+    a:hover:after { 
+      width: 100%; 
+      left: 0; 
+    }
 	}
 
 	.bug {
@@ -929,7 +930,7 @@ ul.banner-slideshow{
       border: none;
       border-radius: 2px;
       border-bottom: 2px solid white;
-      color: white;
+      color: black;
       transition: border-bottom .25s;
       @include media($break2) {
         width: 100%;

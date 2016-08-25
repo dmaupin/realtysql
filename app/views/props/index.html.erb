@@ -8,11 +8,11 @@
 	</div>
 </div>
 <div class="navbar">
- 	<ul class="links">
-		<li id="goingtolistings">Listings</li>
-		<li id="goingtoabout">Info</li>
-		<li id="gotodev">Development</li>
-		<li id="gotocontact">Contact</li>
+ 	<ul>
+		<li id="goingtolistings"><a href="#">Listings</a></li>
+		<li id="goingtoabout"><a href="#">Info</a></li>
+		<li id="gotodev"><a href="#">Development</a></li>
+		<li id="gotocontact"><a href="#">Contact</a></li>
 		<% if user_signed_in? %>
 		<li><%= link_to "Add", new_prop_path %></li>
 		<% end %>
