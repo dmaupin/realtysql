@@ -128,3 +128,13 @@ $(window).scroll(function(){
 //     $(".navbar").css('background-color', 'rgba(255,0,0,' + value + ')', 1 - $(window).scrollTop() / 200);
 //   });
 
+// Mailform animations
+
+$(document).ready(function () {
+  $('#mce-EMAIL').on('blur', function(){
+     $(this).next('#the-label').removeClass('is-focused');
+  }).on('focus', function(){
+    $(this).next('#the-label').addClass('is-focused');
+  });
+});
+
