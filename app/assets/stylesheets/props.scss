@@ -523,6 +523,13 @@ p {
 	@include media($break2) {
 		min-height: 20.25em;
 		padding-left: 1.4em;
+
+    h1 {
+      max-width: 352px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 	}
 }
 
