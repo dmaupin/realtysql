@@ -444,6 +444,7 @@ p {
   	background-position: -109px -190px;
     // background-size: conatin;
   	transition: min-height 0.25s ease-out;
+    margin-bottom: 6.25em;
  	}	
 
  .logo{
@@ -525,7 +526,7 @@ p {
 		padding-left: 1.4em;
 
     h1 {
-        max-width: 332px;
+        max-width: 325px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
@@ -594,8 +595,11 @@ p {
 	background-color: $grey4;
 	min-height: 37.5em;
 
+  #bedbath{
+    margin-top: -20px;
+  }
+
 	span {
-		font-family: $fontmd;
 		color: $grey3;
 		font-size: .5em;
 	}
@@ -625,17 +629,23 @@ p {
 		@include span-columns(6);
 		margin-right: 0em;
 		margin-top: 1.875em;
+    padding-right: 1em;
+
+    h2 {
+      background-color: white;
+      padding: .5em;
+    }
 
 		@include media ($break2) {
 			@include span-columns(6);
 		}
 
 	#bed {
-		@include span-columns(3);
+		@include span-columns(6);
 	}
 	
 	#bath {
-		@include span-columns(3);
+		@include span-columns(6);
 	}
 
 	}
@@ -921,12 +931,12 @@ ul.banner-slideshow{
       width: 100%;
 
     #mc_embed_signup_scroll {
-      display: flex;
-      min-width: 90%;
+      // display: flex;
+      min-width: 100%;
     }
 
     .mc-field-group {
-      width: 90%;
+      width: 100%;
       display: flex;
 
     input {
@@ -935,7 +945,7 @@ ul.banner-slideshow{
       background-color: white;
       height: 5em;
       padding: .5em;
-      width: 90%;
+      width: 100%;
       border: none;
       border-radius: 2px;
       // border-bottom: 2px solid white;
@@ -993,8 +1003,8 @@ ul.banner-slideshow{
   }
 
   .clear {
-    width: 15%;
-    margin-left: 2px;
+    width: 100%;
+    // margin-left: 2px;
     @include media($break2) {
         width: 100%;
         margin-left: 0px;
