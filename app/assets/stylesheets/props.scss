@@ -923,6 +923,10 @@ ul.banner-slideshow{
   padding-top: 7.25em;
   padding-bottom: 7.25em;
 
+  @include media($break2) {
+    padding: 3.25em;
+  }
+
   p {
     column-count: 1;
   }
